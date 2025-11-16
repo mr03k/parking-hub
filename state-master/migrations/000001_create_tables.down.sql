@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS states;
+
+
+DROP EXTENSION IF EXISTS "uuid-ossp";
+

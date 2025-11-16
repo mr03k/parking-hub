@@ -1,0 +1,27 @@
+---
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: SecurityPolicy
+metadata:
+  name: ext-auth-example
+  namespace: dev 
+spec:
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: HTTPRoute
+    name: http-route-echo-api-sec
+  extAuth:
+    headersToExtAuth:
+      - x-current-user
+      - x-forwarded-for
+      - cookie
+      - authorization
+    http:
+      backendRef:
+        name: oauthproxy
+        port: 80
+      headersToBackend: 
+        - x-auth-sub
+        - x-auth-name
+        - x-auth-email
+        - x-auth-verified
+        - x-auth-groups

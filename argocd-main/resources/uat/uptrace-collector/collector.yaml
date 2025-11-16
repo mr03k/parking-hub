@@ -1,0 +1,43 @@
+apiVersion: opentelemetry.io/v1alpha1
+kind: OpenTelemetryCollector
+metadata:
+  name: opentelemtry-collector
+  namespace: uat
+spec:
+  managementState: managed
+  config: |
+    receivers:
+      otlp:
+        protocols:
+          grpc:
+            endpoint: 0.0.0.0:4317
+          
+    exporters:
+      otlp/uptrace:
+        endpoint: uptrace.uptrace.svc.cluster.local:14317
+        tls:
+          insecure: true
+        headers:
+          uptrace-dsn: "http://project2_secret_token@localhost:14318?grpc=14317"
+      otlp/openobserve:
+          endpoint: openobserve.openobserve.svc.cluster.local:5081
+          headers:
+            Authorization: "Basic ZWhzYW5AYWJhbi5pbzpYYVJlVUdFNnRuano4ZE5m"
+            organization: default
+            stream-name: default
+          tls:
+            insecure: true
+          
+    service:
+      pipelines:
+        logs:
+          receivers: [otlp]
+          processors: []
+          exporters: [otlp/openobserve]
+        traces:
+          receivers: [otlp]
+          exporters: [otlp/openobserve]
+        metrics:
+          receivers: [otlp]
+          processors: []
+          exporters: [otlp/openobserve]

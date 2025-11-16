@@ -1,0 +1,23 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  name: uat-rabbit
+  namespace: uat
+spec:
+  replicas: 3
+  resources:
+    requests:
+      cpu: '2'
+      memory: 4Gi
+    limits:
+      cpu: '2'
+      memory: 4Gi
+  persistence:
+    storage: "120Gi"
+
+  rabbitmq:
+    additionalConfig: |
+      cluster_partition_handling = pause_minority
+      disk_free_limit.relative = 0.9
+      collect_statistics_interval = 10000
+      vm_memory_high_watermark.relative = 0.9

@@ -1,0 +1,23 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  labels:
+    app: kube-prometheus-stack-cnpg
+    release: kube-prometheus-stack
+  name: kube-prometheus-stack-cnpg
+  namespace: kube-prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: cnpg-app
+
+  podMetricsEndpoints:
+    - port: metrics
+      path: /metrics
+      scheme: http
+      interval: 15s
+      scrapeTimeout: 14s
+  jobLabel: jobLabel
+  namespaceSelector:
+    matchNames:
+      - cnpg-system

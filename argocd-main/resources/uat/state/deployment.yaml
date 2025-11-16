@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: farin-state-deployment
+  namespace: uat
+  labels:
+    app: farin-state
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: farin-state
+  template:
+    metadata:
+      labels:
+        app: farin-state
+    spec:
+      containers:
+      - name: farin-state
+        image: docker.aban.io/farin/state:master-56e4216d479b4006b58308f96d9b1b46c53764b1
+        resources:
+          requests:
+            memory: "20Mi"
+            cpu: "10m"
+          limits:
+            memory: "1500Mi"
+            cpu: "900m"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: config-env
+          subPath: env
+          mountPath: /app/.env
+        livenessProbe:
+          httpGet:
+            path: /liveness
+            port: 80
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /readiness
+            port: 80
+          timeoutSeconds: 30
+          initialDelaySeconds: 10
+          periodSeconds: 70
+
+      initContainers:
+      - name: migrate
+        image: docker.aban.io/farin/migrate/state:master-56e4216d479b4006b58308f96d9b1b46c53764b1
+        command: [ "/bin/sh", "-c", "/usr/bin/migrate -path /app/migrations -database \"$(cat /app/.env | grep '^DATABASE_HOST=' | awk -F'=' '{print substr($0, index($0, $2))}')\" -verbose up" ]
+        volumeMounts:
+        - name: config-env
+          subPath: env
+          mountPath: /app/.env
+      volumes:
+      - configMap:
+          name: farin-state
+        name: config-env

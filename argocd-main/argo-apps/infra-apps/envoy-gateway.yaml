@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: envoy-gateway
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: nexus-docker.aban.io/envoyproxy
+    chart: gateway-helm
+    targetRevision: v1.1.0
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: envoy-gateway-system
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gateway-resources
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://git.abanppc.com/farin-project/infra/argocd.git
+    targetRevision: HEAD
+    path: resources/infra/gateway-api
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gateway-resources
+  syncPolicy:
+
+    syncOptions:
+      - CreateNamespace=true

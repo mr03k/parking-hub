@@ -1,0 +1,12 @@
+apiVersion: stackgres.io/v1
+kind: SGCluster
+metadata:
+  name: idp-app-pg
+  namespace: idp-uat
+spec:
+  instances: 1
+  postgres:
+    version: '16.3'
+  pods:
+    persistentVolume:
+      size: '1Gi'

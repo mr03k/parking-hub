@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: identity-provider
+  namespace: idp-uat
+data:
+  APP_SERVICE_AUTH_JWT_SECRET: Ih6/X9h81qAEqYqxYd1Up+5ZCFqgTvgzeeBWtPU78Hxf
+  APP_DATASOURCE_POSTGRES_DSN: "host=idp-app-pg user=postgres password=5801-7dcf-4e38-936 dbname=idp sslmode=disable TimeZone=UTC"
+  APP_OBSERVABILITY_LOGGING_LEVEL: "info"
+  SERVER_HTTP_PORT: "8080"

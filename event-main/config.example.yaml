@@ -1,0 +1,38 @@
+server:
+  http:
+    port: 8080
+    host: ""
+    production: true
+    basepath: oauth2
+  domainurl: "https://127.0.0.1:8080"
+
+security:
+  secret: W+c%1*~(E)^2^#sxx^^7%b34 #24 bytes secret key Make sure to change this on deployment
+
+rabbitMQ:
+  host: "amqp://localhost"
+  queue: "event_queue"
+  exchange: "event_exchange"
+
+mongoDB:
+  host: "mongodb://admin:password@localhost:27017/"
+  database: "event_queue"
+
+observability:
+  tracing:
+    enabled: false
+    zipkin:
+      url: "http://localhost:9411/api/v2/spans"
+      servicename: "greeter"
+  metrics:
+    enabled: false
+    prometheus:
+      port: 9090
+      host: "localhost"
+      path: "/metrics"
+  logging:
+    level: "info"
+    logstash:
+      enabled: false
+      address: "127.0.0.1:9000"
+

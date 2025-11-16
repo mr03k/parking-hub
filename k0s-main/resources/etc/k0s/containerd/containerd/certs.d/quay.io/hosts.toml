@@ -1,0 +1,4 @@
+server = "quay.io"
+
+[host."https://quay.aban.io"]
+  capabilities = ["pull", "resolve"]

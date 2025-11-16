@@ -1,0 +1,63 @@
+stages:
+  - test
+  - build
+
+variables:
+  IMAGE_NAME: $CI_REGISTRY/farin/$CI_PROJECT_NAME:$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHA
+  GO_IMAGE_NAME: golang:1.22.1-alpine
+
+test-lint:
+  image: $GO_IMAGE_NAME
+  stage: test
+  before_script:
+    - env
+    - apk add make
+    - make devtools
+  script:
+    - make check
+
+#
+#test-bench:
+#  image: $GO_IMAGE_NAME
+#  stage: test
+#
+#  before_script:
+#    - apk add make
+#    - make devtools
+#    - go env
+#  script:
+#    - make bench_tests
+
+test-unit:
+  image: $GO_IMAGE_NAME
+  stage: test
+
+  before_script:
+    - apk add make
+    - make devtools
+  script:
+    - make unit_tests
+#
+#test-coverage:
+#  image: $GO_IMAGE_NAME
+#  stage: test
+#
+#  before_script:
+#    - apk add make
+#    - make devtools
+#  script:
+#    - make coverage_tests
+
+
+
+build-docker:
+  image: docker:19.03.11
+  stage: build
+
+  before_script:
+    - env
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWD $CI_REGISTRY
+  script:
+    - echo "building the docker image... $IMAGE_NAME"
+    - docker build . -t $IMAGE_NAME
+    - docker push $IMAGE_NAME

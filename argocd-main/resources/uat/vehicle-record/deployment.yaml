@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: farin-vehicle-record-deployment
+  namespace: uat
+  labels:
+    app: farin-vehicle-record
+spec:
+  replicas: 7
+  selector:
+    matchLabels:
+      app: farin-vehicle-record
+  template:
+    metadata:
+      labels:
+        app: farin-vehicle-record
+    spec:
+      containers:
+      - name: farin-vehicle-record
+        image: docker.aban.io/farin/vehicle-records:main-e1defe73e7b29feae86fe2fc45f22b11275faef3
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: "100m"
+          limits:
+            memory: "4500Mi"
+            cpu: "2000m"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: config-env
+          subPath: env
+          mountPath: /app/.env
+        livenessProbe:
+          httpGet:
+            path: /liveness
+            port: 80
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /readiness
+            port: 80
+          timeoutSeconds: 30
+          initialDelaySeconds: 10
+          periodSeconds: 70
+
+      initContainers:
+      - name: migrate
+        image: docker.aban.io/farin/migrate/vehicle-records:main-aead149efabdad0db355b96bcade58d8bcf92cd9
+        command: [ "/bin/sh", "-c", "/usr/bin/migrate -path /app/migrations -database \"$(cat /app/.env | grep '^DATABASE_HOST=' | awk -F'=' '{print substr($0, index($0, $2))}')\" -verbose up" ]
+        volumeMounts:
+        - name: config-env
+          subPath: env
+          mountPath: /app/.env
+      - name: init-seed
+        image: docker.aban.io/farin/vehicle-records:main-4e148e0c2f1957342e4004fb017c48f345681116
+        command: [ "/app/build", "-seed" ]
+        volumeMounts:
+        - name: config-env
+          subPath: env
+          mountPath: /app/.env
+      # - name: manual-retry
+      #   image: docker.aban.io/farin/vehicle-records:main-46450cf966038b90d51c10b969adfc6a28cbee89
+      #   command: [ "/app/build", "-retry", "-from=1741231800000", "-limit=20000" ]
+      #   volumeMounts:
+      #   - name: config-env
+      #     subPath: env
+      #     mountPath: /app/.env
+      volumes:
+      - configMap:
+          name: farin-vehicle-record
+        name: config-env

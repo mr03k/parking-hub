@@ -1,0 +1,79 @@
+# admin User
+apiVersion: rabbitmq.com/v1beta1
+kind: User
+metadata:
+  name: rabbit-admin-user
+  namespace: uat
+spec:
+  tags:
+  - administrator
+  - monitoring
+  - policymaker
+  rabbitmqClusterReference:
+    name: uat-rabbit
+  importCredentialsSecret:
+    name: rabbit-vehicle-admin-cred
+---
+apiVersion: v1
+stringData:
+  password: ae0FWgOoLiEmBZBW5MGQa2lMBauLKQpX
+  username: default_user_bkVtZ-pUWMLqTFliGYJ
+kind: Secret
+metadata:
+
+  name: rabbit-vehicle-admin-cred
+  namespace: uat
+---
+apiVersion: rabbitmq.com/v1beta1
+kind: Permission
+metadata:
+  name: rabbit-admin-permission
+  namespace: uat
+spec:
+  vhost: "/"
+  user: "default_user_bkVtZ-pUWMLqTFliGYJ"
+  permissions:
+    write: ".*"
+    configure: ".*"
+    read: ".*"
+  rabbitmqClusterReference:
+    name: uat-rabbit
+---
+# Client User
+apiVersion: rabbitmq.com/v1beta1
+kind: User
+metadata:
+  name: rabbit-user
+  namespace: uat
+spec:
+  tags:
+  - administrator
+  rabbitmqClusterReference:
+    name: uat-rabbit
+  importCredentialsSecret:
+    name: rabbit-vehicle-user-cred
+---
+apiVersion: v1
+stringData:
+  password: KSOZILCV-w9Z9ZHGya3Fwa-oWL3b_J7r
+  username: 6wD94JLgcNw5v8lgxRBDkYCcjjXwhzkY
+kind: Secret
+metadata:
+
+  name: rabbit-vehicle-user-cred
+  namespace: uat
+---
+apiVersion: rabbitmq.com/v1beta1
+kind: Permission
+metadata:
+  name: rabbit-user-permission
+  namespace: uat
+spec:
+  vhost: "/"
+  user: "6wD94JLgcNw5v8lgxRBDkYCcjjXwhzkY"
+  permissions:
+    write: ".*"
+    configure: "^$"
+    read: "^$"
+  rabbitmqClusterReference:
+    name: uat-rabbit

@@ -1,0 +1,9 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Backup
+metadata:
+  name: backup-2025-05-26-13-53
+  namespace: uat
+spec:
+  method: barmanObjectStore
+  cluster:
+    name: pg-vehicle-record

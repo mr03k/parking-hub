@@ -1,0 +1,10 @@
+[user]
+	name = mahdi
+	email = mahdimehrabi17@gmail.com
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+[core]
+	autocrlf = input
+[url "ssh://git@clone.abanppc.com/"]
+        insteadOf = https://git.abanppc.com/
+

@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  name: aW5mcmEgYXJnbw==
+  password: Y29QOGxFckdEVzZydmxtSg==
+  type: Z2l0
+  url: aHR0cHM6Ly9naXQuYWJhbnBwYy5jb20vZmFyaW4tcHJvamVjdC9pbmZyYS9hcmdvY2QuZ2l0
+  username: c2hhcmRhcmktYXJnb2Nk
+kind: Secret
+metadata:
+  name: repo-git-aban
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository

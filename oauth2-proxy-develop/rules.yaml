@@ -1,0 +1,19 @@
+#------------routes-------------
+# name: str
+# path: str path
+# type: exact,prefix
+# action: allow,deny,auth
+
+rules:
+  - name: login
+    path: /login
+    action: auth
+  - name: admin
+    path: /admin
+    action: deny
+  - name: swagger
+    path: /api/v1/docs
+    action: allow
+  - name: api
+    path: /api/v1/
+    action: auth

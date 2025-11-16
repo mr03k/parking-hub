@@ -1,0 +1,7214 @@
+definitions:
+  model.Roles:
+    properties:
+      createdAt:
+        type: integer
+      description:
+        type: string
+      id:
+        type: string
+      roleName:
+        type: string
+    type: object
+  model.Users:
+    properties:
+      address:
+        type: string
+      codePostal:
+        type: string
+      createdAt:
+        type: integer
+      email:
+        type: string
+      firstName:
+        type: string
+      gender:
+        type: string
+      iDNational:
+        type: string
+      id:
+        type: string
+      imageProfile:
+        type: string
+      lastName:
+        type: string
+      nameCompany:
+        type: string
+      numberMobile:
+        type: string
+      numberPhone:
+        type: string
+      password:
+        type: string
+      status:
+        type: string
+      username:
+        type: string
+    type: object
+  types.AssignmentsObjDetail:
+    properties:
+      accessEndDate:
+        type: integer
+      createdAt:
+        type: integer
+      iDForm:
+        type: string
+      iDModule:
+        type: string
+      iDRole:
+        type: string
+      iDUser:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+    type: object
+  types.BaseRatesObjDetail:
+    properties:
+      baseRate:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      fromMinutes:
+        type: integer
+      iDCategoryVehicle:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      toMinutes:
+        type: integer
+    type: object
+  types.CalendarsObjDetail:
+    properties:
+      createdAt:
+        type: integer
+      description:
+        type: string
+      holidayIs:
+        type: boolean
+      iDContract:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      shamsiDate:
+        type: string
+      shiftWork:
+        type: string
+      weekday:
+        type: string
+      workDate:
+        type: string
+      year:
+        type: integer
+    type: object
+  types.CitiesObjDetail:
+    properties:
+      boundary:
+        type: string
+      cityName:
+        type: string
+      codeCity:
+        type: string
+      createdAt:
+        type: integer
+      iDCountry:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+    type: object
+  types.Column:
+    properties:
+      exp:
+        description: expressions, which default to = when the value is null, have
+          =, !=, >, >=, <, <=, like
+        type: string
+      logic:
+        description: logical type, defaults to and when value is null, only &(and),
+          ||(or)
+        type: string
+      name:
+        description: column name
+        type: string
+      value:
+        description: column value
+    type: object
+  types.ContractorsObjDetail:
+    properties:
+      address:
+        type: string
+      ceoName:
+        type: string
+      codeContractor:
+        type: string
+      contractorName:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      email:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      numberAccountBank:
+        type: string
+      numberRegistration:
+        type: string
+      personContact:
+        type: string
+      phoneNumber:
+        type: string
+      signatoriesAuthorized:
+        type: string
+      typeContract:
+        type: string
+    type: object
+  types.ContractsObjDetail:
+    properties:
+      amountContract:
+        type: integer
+      createdAt:
+        type: integer
+      dateContract:
+        type: string
+      dateEnd:
+        type: string
+      dateStart:
+        type: string
+      description:
+        type: string
+      iDContractor:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      numberContract:
+        type: string
+      periodEquipment:
+        type: integer
+      periodOperation:
+        type: integer
+      typeContract:
+        type: string
+    type: object
+  types.CountriesObjDetail:
+    properties:
+      area:
+        type: string
+      capital:
+        type: string
+      countryCode:
+        type: string
+      countryName:
+        type: string
+      createdAt:
+        type: integer
+      currency:
+        type: string
+      geoBoundary:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      isoCode:
+        type: string
+      phoneCode:
+        type: string
+      population:
+        type: integer
+      region:
+        type: string
+    type: object
+  types.CreateAssignmentsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateAssignmentsRequest:
+    properties:
+      accessEndDate:
+        type: integer
+      iDForm:
+        type: string
+      iDModule:
+        type: string
+      iDRole:
+        type: string
+      iDUser:
+        type: string
+    type: object
+  types.CreateBaseRatesReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateBaseRatesRequest:
+    properties:
+      baseRate:
+        type: string
+      description:
+        type: string
+      fromMinutes:
+        type: integer
+      iDCategoryVehicle:
+        type: string
+      toMinutes:
+        type: integer
+    type: object
+  types.CreateCalendarsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateCalendarsRequest:
+    properties:
+      description:
+        type: string
+      holidayIs:
+        type: boolean
+      iDContract:
+        type: string
+      shamsiDate:
+        type: string
+      shiftWork:
+        type: string
+      weekday:
+        type: string
+      workDate:
+        type: string
+      year:
+        type: integer
+    type: object
+  types.CreateCitiesReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateCitiesRequest:
+    properties:
+      boundary:
+        type: string
+      cityName:
+        type: string
+      codeCity:
+        type: string
+      iDCountry:
+        type: string
+    type: object
+  types.CreateContractorsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateContractorsRequest:
+    properties:
+      address:
+        type: string
+      ceoName:
+        type: string
+      codeContractor:
+        type: string
+      contractorName:
+        type: string
+      description:
+        type: string
+      email:
+        type: string
+      numberAccountBank:
+        type: string
+      numberRegistration:
+        type: string
+      personContact:
+        type: string
+      phoneNumber:
+        type: string
+      signatoriesAuthorized:
+        type: string
+      typeContract:
+        type: string
+    type: object
+  types.CreateContractsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateContractsRequest:
+    properties:
+      amountContract:
+        type: integer
+      dateContract:
+        type: string
+      dateEnd:
+        type: string
+      dateStart:
+        type: string
+      description:
+        type: string
+      iDContractor:
+        type: string
+      numberContract:
+        type: string
+      periodEquipment:
+        type: integer
+      periodOperation:
+        type: integer
+      typeContract:
+        type: string
+    type: object
+  types.CreateCountriesReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateCountriesRequest:
+    properties:
+      area:
+        type: string
+      capital:
+        type: string
+      countryCode:
+        type: string
+      countryName:
+        type: string
+      currency:
+        type: string
+      geoBoundary:
+        type: string
+      isoCode:
+        type: string
+      phoneCode:
+        type: string
+      population:
+        type: integer
+      region:
+        type: string
+    type: object
+  types.CreateDevicePartsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateDevicePartsRequest:
+    properties:
+      brand:
+        type: string
+      codePart:
+        type: string
+      dateExpiryWarranty:
+        type: string
+      dateInstallation:
+        type: string
+      description:
+        type: string
+      iDDevice:
+        type: string
+      model:
+        type: string
+      numberSerial:
+        type: string
+      partName:
+        type: string
+      periodMaintenance:
+        type: string
+      typePart:
+        type: string
+    type: object
+  types.CreateDevicesReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateDevicesRequest:
+    properties:
+      classDevice:
+        type: string
+      codeDevice:
+        type: string
+      dateExpiryInsurance:
+        type: string
+      dateExpiryWarranty:
+        type: string
+      dateInstallation:
+        type: string
+      description:
+        type: string
+      iDContractor:
+        type: string
+      imageContract:
+        type: string
+      imageInsurance:
+        type: string
+      model:
+        type: string
+      numberSerial:
+        type: string
+    type: object
+  types.CreateDistrictsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateDistrictsRequest:
+    properties:
+      area:
+        type: string
+      boundaryGeo:
+        type: string
+      codeDistrict:
+        type: string
+      districtName:
+        type: string
+      iDCity:
+        type: string
+      population:
+        type: integer
+    type: object
+  types.CreateDriverLicensesReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateDriverLicensesRequest:
+    properties:
+      dateExpiry:
+        type: string
+      dateIssue:
+        type: string
+      description:
+        type: string
+      iDDriver:
+        type: string
+      imageLicense:
+        type: string
+      licenseNumber:
+        type: string
+      typeLicense:
+        type: string
+    type: object
+  types.CreateDriversReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateDriversRequest:
+    properties:
+      address:
+        type: string
+      birthCertificateImage:
+        type: string
+      codeDriver:
+        type: string
+      codePostal:
+        type: string
+      dateEndEmployment:
+        type: string
+      dateStartEmployment:
+        type: string
+      description:
+        type: string
+      driverPhoto:
+        type: string
+      email:
+        type: string
+      firstName:
+        type: string
+      gender:
+        type: string
+      iDContractor:
+        type: string
+      iDNational:
+        type: string
+      imageCardID:
+        type: string
+      imageCardServiceMilitary:
+        type: string
+      imageCertificateHealth:
+        type: string
+      imageRecordCriminal:
+        type: string
+      nameLast:
+        type: string
+      numberMobile:
+        type: string
+      numberPhone:
+        type: string
+      statusEmployment:
+        type: string
+      typeDriver:
+        type: string
+      typeShift:
+        type: string
+    type: object
+  types.CreateExceptionsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateExceptionsRequest:
+    properties:
+      carLicensePlates:
+        type: string
+      description:
+        type: string
+      documentImage:
+        type: string
+      endDate:
+        type: string
+      exceptionMultiplier:
+        type: string
+      motorcycleLicensePlates:
+        type: string
+      notificationDate:
+        type: string
+      notificationNumber:
+        type: string
+      startDate:
+        type: string
+      userID:
+        type: string
+      vehicleType:
+        type: string
+    type: object
+  types.CreateFormsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateFormsRequest:
+    properties:
+      description:
+        type: string
+      formName:
+        type: string
+    type: object
+  types.CreateModulesReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateModulesRequest:
+    properties:
+      description:
+        type: string
+      moduleName:
+        type: string
+    type: object
+  types.CreateParkingsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: string
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateParkingsRequest:
+    properties:
+      boundaryParking:
+        type: string
+      codeParking:
+        type: string
+      description:
+        type: string
+      iDSegment:
+        type: string
+      position:
+        type: string
+      statusAvailability:
+        type: string
+      typeParking:
+        type: string
+    type: object
+  types.CreatePartsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreatePartsRequest:
+    properties:
+      boundaryPart:
+        type: string
+      codePart:
+        type: string
+      description:
+        type: string
+      iDRoad:
+        type: string
+      lengthPart:
+        type: string
+      partName:
+        type: string
+      spotsParking:
+        type: integer
+      spotsParkingDisabled:
+        type: integer
+    type: object
+  types.CreatePeakHourMultipliersReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreatePeakHourMultipliersRequest:
+    properties:
+      codeTimePeak:
+        type: string
+      description:
+        type: string
+      flag:
+        type: string
+      fromValid:
+        type: string
+      multiplier:
+        type: string
+      timeEnd:
+        type: string
+      timeStart:
+        type: string
+      toValid:
+        type: string
+      weekday:
+        type: string
+    type: object
+  types.CreateRatesReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateRatesRequest:
+    properties:
+      approvalDate:
+        type: string
+      approvalNumber:
+        type: string
+      baseRateID:
+        type: string
+      cityID:
+        type: string
+      code:
+        type: string
+      description:
+        type: string
+      endTime:
+        type: string
+      exceptionsID:
+        type: string
+      goodPercentage:
+        type: integer
+      latePenalty:
+        type: string
+      latePenaltyMax:
+        type: string
+      normalSettlementPeriod:
+        type: integer
+      peakHourMultiplier:
+        type: string
+      rateMultiplier:
+        type: string
+      roadCategoryID:
+        type: string
+      startTime:
+        type: string
+      timeCycleMinutes:
+        type: integer
+      validFrom:
+        type: string
+      validTo:
+        type: string
+      year:
+        type: integer
+    type: object
+  types.CreateRingsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateRingsRequest:
+    properties:
+      boundaryRing:
+        type: string
+      codeRing:
+        type: string
+      description:
+        type: string
+      distanceBuffer:
+        type: string
+      lengthRing:
+        type: string
+      nameRing:
+        type: string
+      pointStart:
+        type: string
+      signsTraffic:
+        type: integer
+      signsTrafficDisabled:
+        type: integer
+      spotsParking:
+        type: integer
+      spotsParkingDisabled:
+        type: integer
+    type: object
+  types.CreateRoadCategoriesReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateRoadCategoriesRequest:
+    properties:
+      codeCategoryRoad:
+        type: string
+      description:
+        type: string
+      nameCategoryRoad:
+        type: string
+    type: object
+  types.CreateRoadsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateRoadsRequest:
+    properties:
+      boundaryRoad:
+        type: string
+      codeRoad:
+        type: string
+      description:
+        type: string
+      gradeRoad:
+        type: string
+      lengthRoad:
+        type: string
+      limitSpeed:
+        type: integer
+      roadName:
+        type: string
+      spotsParking:
+        type: integer
+      spotsParkingDisabled:
+        type: integer
+      typeRoad:
+        type: string
+      widthRoad:
+        type: string
+    type: object
+  types.CreateRolesReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateRolesRequest:
+    properties:
+      description:
+        type: string
+      roleName:
+        type: string
+    type: object
+  types.CreateSegmentsReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateSegmentsRequest:
+    properties:
+      description:
+        type: string
+      disabledParkingSpots:
+        type: integer
+      districtID:
+        type: string
+      parkingSpots:
+        type: integer
+      partID:
+        type: string
+      roadID:
+        type: string
+      segmentBoundary:
+        type: string
+      segmentCode:
+        type: string
+      segmentLength:
+        type: string
+      segmentName:
+        type: string
+    type: object
+  types.CreateUsersReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateUsersRequest:
+    properties:
+      address:
+        type: string
+      codePostal:
+        type: string
+      email:
+        type: string
+      firstName:
+        type: string
+      gender:
+        type: string
+      iDNational:
+        type: string
+      imageProfile:
+        type: string
+      lastName:
+        type: string
+      nameCompany:
+        type: string
+      numberMobile:
+        type: string
+      numberPhone:
+        type: string
+      password:
+        type: string
+      status:
+        type: string
+      username:
+        type: string
+    type: object
+  types.CreateVehicleCategoriesReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateVehicleCategoriesRequest:
+    properties:
+      codeCategory:
+        type: string
+      description:
+        type: string
+      nameCategory:
+        type: string
+    type: object
+  types.CreateVehiclesReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          id:
+            description: id
+            type: integer
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.CreateVehiclesRequest:
+    properties:
+      bodyInsuranceImage:
+        type: string
+      brand:
+        type: string
+      codeVehicle:
+        type: string
+      color:
+        type: string
+      description:
+        type: string
+      expiryInsuranceBody:
+        type: string
+      expiryInsurancePartyThird:
+        type: string
+      iDContractor:
+        type: string
+      imageCardVehicle:
+        type: string
+      imageDocumentVehicle:
+        type: string
+      kilometersInitial:
+        type: integer
+      manufactureOfYear:
+        type: integer
+      model:
+        type: string
+      plateLicense:
+        type: string
+      status:
+        type: string
+      thirdPartyInsuranceImage:
+        type: string
+      typeVehicle:
+        type: string
+      vin:
+        type: string
+    type: object
+  types.DeleteAssignmentsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteBaseRatesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteCalendarsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteCitiesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteContractorsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteContractsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteCountriesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteDevicePartsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteDevicesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteDistrictsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteDriverLicensesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteDriversByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteExceptionsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteFormsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteModulesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteParkingsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeletePartsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeletePeakHourMultipliersByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteRatesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteRingsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteRoadCategoriesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteRoadsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteRolesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteSegmentsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteUsersByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteVehicleCategoriesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DeleteVehiclesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.DevicePartsObjDetail:
+    properties:
+      brand:
+        type: string
+      codePart:
+        type: string
+      createdAt:
+        type: integer
+      dateExpiryWarranty:
+        type: string
+      dateInstallation:
+        type: string
+      description:
+        type: string
+      iDDevice:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      model:
+        type: string
+      numberSerial:
+        type: string
+      partName:
+        type: string
+      periodMaintenance:
+        type: string
+      typePart:
+        type: string
+    type: object
+  types.DevicesObjDetail:
+    properties:
+      classDevice:
+        type: string
+      codeDevice:
+        type: string
+      createdAt:
+        type: integer
+      dateExpiryInsurance:
+        type: string
+      dateExpiryWarranty:
+        type: string
+      dateInstallation:
+        type: string
+      description:
+        type: string
+      iDContractor:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      imageContract:
+        type: string
+      imageInsurance:
+        type: string
+      model:
+        type: string
+      numberSerial:
+        type: string
+    type: object
+  types.DistrictsObjDetail:
+    properties:
+      area:
+        type: string
+      boundaryGeo:
+        type: string
+      codeDistrict:
+        type: string
+      createdAt:
+        type: integer
+      districtName:
+        type: string
+      iDCity:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      population:
+        type: integer
+    type: object
+  types.DriverLicensesObjDetail:
+    properties:
+      createdAt:
+        type: integer
+      dateExpiry:
+        type: string
+      dateIssue:
+        type: string
+      description:
+        type: string
+      iDDriver:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      imageLicense:
+        type: string
+      licenseNumber:
+        type: string
+      typeLicense:
+        type: string
+    type: object
+  types.DriverLogin:
+    properties:
+      msisdn:
+        type: string
+      password:
+        type: string
+    type: object
+  types.DriverLoginResponse:
+    properties:
+      role:
+        $ref: '#/definitions/model.Roles'
+      token:
+        type: string
+      user:
+        $ref: '#/definitions/model.Users'
+    type: object
+  types.DriversObjDetail:
+    properties:
+      address:
+        type: string
+      birthCertificateImage:
+        type: string
+      codeDriver:
+        type: string
+      codePostal:
+        type: string
+      createdAt:
+        type: integer
+      dateEndEmployment:
+        type: string
+      dateStartEmployment:
+        type: string
+      description:
+        type: string
+      driverPhoto:
+        type: string
+      email:
+        type: string
+      firstName:
+        type: string
+      gender:
+        type: string
+      iDContractor:
+        type: string
+      iDNational:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      imageCardID:
+        type: string
+      imageCardServiceMilitary:
+        type: string
+      imageCertificateHealth:
+        type: string
+      imageRecordCriminal:
+        type: string
+      nameLast:
+        type: string
+      numberMobile:
+        type: string
+      numberPhone:
+        type: string
+      statusEmployment:
+        type: string
+      typeDriver:
+        type: string
+      typeShift:
+        type: string
+    type: object
+  types.ExceptionsObjDetail:
+    properties:
+      carLicensePlates:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      documentImage:
+        type: string
+      endDate:
+        type: string
+      exceptionMultiplier:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      motorcycleLicensePlates:
+        type: string
+      notificationDate:
+        type: string
+      notificationNumber:
+        type: string
+      startDate:
+        type: string
+      userID:
+        type: string
+      vehicleType:
+        type: string
+    type: object
+  types.FormsObjDetail:
+    properties:
+      createdAt:
+        type: integer
+      description:
+        type: string
+      formName:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+    type: object
+  types.GetAssignmentsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          assignments:
+            $ref: '#/definitions/types.AssignmentsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetBaseRatesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          baseRates:
+            $ref: '#/definitions/types.BaseRatesObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetCalendarsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          calendars:
+            $ref: '#/definitions/types.CalendarsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetCitiesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          cities:
+            $ref: '#/definitions/types.CitiesObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetContractorsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          contractors:
+            $ref: '#/definitions/types.ContractorsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetContractsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          contracts:
+            $ref: '#/definitions/types.ContractsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetCountriesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          countries:
+            $ref: '#/definitions/types.CountriesObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetDevicePartsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          deviceParts:
+            $ref: '#/definitions/types.DevicePartsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetDevicesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          devices:
+            $ref: '#/definitions/types.DevicesObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetDistrictsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          districts:
+            $ref: '#/definitions/types.DistrictsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetDriverLicensesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          driverLicenses:
+            $ref: '#/definitions/types.DriverLicensesObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetDriversByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          drivers:
+            $ref: '#/definitions/types.DriversObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetExceptionsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          exceptions:
+            $ref: '#/definitions/types.ExceptionsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetFormsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          forms:
+            $ref: '#/definitions/types.FormsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetModulesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          modules:
+            $ref: '#/definitions/types.ModulesObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetParkingsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          parkings:
+            $ref: '#/definitions/types.ParkingsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetPartsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          parts:
+            $ref: '#/definitions/types.PartsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetPeakHourMultipliersByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          peakHourMultipliers:
+            $ref: '#/definitions/types.PeakHourMultipliersObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetRatesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          rates:
+            $ref: '#/definitions/types.RatesObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetRingsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          rings:
+            $ref: '#/definitions/types.RingsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetRoadCategoriesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          roadCategories:
+            $ref: '#/definitions/types.RoadCategoriesObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetRoadsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          roads:
+            $ref: '#/definitions/types.RoadsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetRolesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          roles:
+            $ref: '#/definitions/types.RolesObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetSegmentsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          segments:
+            $ref: '#/definitions/types.SegmentsObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetUsersByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          users:
+            $ref: '#/definitions/types.UsersObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetVehicleCategoriesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          vehicleCategories:
+            $ref: '#/definitions/types.VehicleCategoriesObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.GetVehiclesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          vehicles:
+            $ref: '#/definitions/types.VehiclesObjDetail'
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListAssignmentssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          assignmentss:
+            items:
+              $ref: '#/definitions/types.AssignmentsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListBaseRatessReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          baseRatess:
+            items:
+              $ref: '#/definitions/types.BaseRatesObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListCalendarssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          calendarss:
+            items:
+              $ref: '#/definitions/types.CalendarsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListCitiessReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          citiess:
+            items:
+              $ref: '#/definitions/types.CitiesObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListContractorssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          contractorss:
+            items:
+              $ref: '#/definitions/types.ContractorsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListContractssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          contractss:
+            items:
+              $ref: '#/definitions/types.ContractsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListCountriessReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          countriess:
+            items:
+              $ref: '#/definitions/types.CountriesObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListDevicePartssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          devicePartss:
+            items:
+              $ref: '#/definitions/types.DevicePartsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListDevicessReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          devicess:
+            items:
+              $ref: '#/definitions/types.DevicesObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListDistrictssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          districtss:
+            items:
+              $ref: '#/definitions/types.DistrictsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListDriverLicensessReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          driverLicensess:
+            items:
+              $ref: '#/definitions/types.DriverLicensesObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListDriverssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          driverss:
+            items:
+              $ref: '#/definitions/types.DriversObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListExceptionssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          exceptionss:
+            items:
+              $ref: '#/definitions/types.ExceptionsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListFormssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          formss:
+            items:
+              $ref: '#/definitions/types.FormsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListModulessReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          moduless:
+            items:
+              $ref: '#/definitions/types.ModulesObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListParkingssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          parkingss:
+            items:
+              $ref: '#/definitions/types.ParkingsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListPartssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          partss:
+            items:
+              $ref: '#/definitions/types.PartsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListPeakHourMultiplierssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          peakHourMultiplierss:
+            items:
+              $ref: '#/definitions/types.PeakHourMultipliersObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListRatessReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          ratess:
+            items:
+              $ref: '#/definitions/types.RatesObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListRingssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          ringss:
+            items:
+              $ref: '#/definitions/types.RingsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListRoadCategoriessReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          roadCategoriess:
+            items:
+              $ref: '#/definitions/types.RoadCategoriesObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListRoadssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          roadss:
+            items:
+              $ref: '#/definitions/types.RoadsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListRolessReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          roless:
+            items:
+              $ref: '#/definitions/types.RolesObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListSegmentssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          segmentss:
+            items:
+              $ref: '#/definitions/types.SegmentsObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListUserssReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          userss:
+            items:
+              $ref: '#/definitions/types.UsersObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListVehicleCategoriessReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          vehicleCategoriess:
+            items:
+              $ref: '#/definitions/types.VehicleCategoriesObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ListVehiclessReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+        properties:
+          vehicless:
+            items:
+              $ref: '#/definitions/types.VehiclesObjDetail'
+            type: array
+        type: object
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.ModulesObjDetail:
+    properties:
+      createdAt:
+        type: integer
+      description:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      moduleName:
+        type: string
+    type: object
+  types.Params:
+    properties:
+      columns:
+        description: query conditions
+        items:
+          $ref: '#/definitions/types.Column'
+        type: array
+      limit:
+        description: lines per page
+        type: integer
+      page:
+        description: page number, starting from page 0
+        type: integer
+      sort:
+        description: sorted fields, multi-column sorting separated by commas
+        type: string
+    type: object
+  types.ParkingsObjDetail:
+    properties:
+      boundaryParking:
+        type: string
+      codeParking:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      iDSegment:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: string
+      position:
+        type: string
+      statusAvailability:
+        type: string
+      typeParking:
+        type: string
+    type: object
+  types.PartsObjDetail:
+    properties:
+      boundaryPart:
+        type: string
+      codePart:
+        type: string
+      description:
+        type: string
+      iDRoad:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      lengthPart:
+        type: string
+      partName:
+        type: string
+      spotsParking:
+        type: integer
+      spotsParkingDisabled:
+        type: integer
+    type: object
+  types.PeakHourMultipliersObjDetail:
+    properties:
+      codeTimePeak:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      flag:
+        type: string
+      fromValid:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      multiplier:
+        type: string
+      timeEnd:
+        type: string
+      timeStart:
+        type: string
+      toValid:
+        type: string
+      weekday:
+        type: string
+    type: object
+  types.RatesObjDetail:
+    properties:
+      approvalDate:
+        type: string
+      approvalNumber:
+        type: string
+      baseRateID:
+        type: string
+      cityID:
+        type: string
+      code:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      endTime:
+        type: string
+      exceptionsID:
+        type: string
+      goodPercentage:
+        type: integer
+      id:
+        description: convert to uint64 id
+        type: integer
+      latePenalty:
+        type: string
+      latePenaltyMax:
+        type: string
+      normalSettlementPeriod:
+        type: integer
+      peakHourMultiplier:
+        type: string
+      rateMultiplier:
+        type: string
+      roadCategoryID:
+        type: string
+      startTime:
+        type: string
+      timeCycleMinutes:
+        type: integer
+      validFrom:
+        type: string
+      validTo:
+        type: string
+      year:
+        type: integer
+    type: object
+  types.RingsObjDetail:
+    properties:
+      boundaryRing:
+        type: string
+      codeRing:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      distanceBuffer:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      lengthRing:
+        type: string
+      nameRing:
+        type: string
+      pointStart:
+        type: string
+      signsTraffic:
+        type: integer
+      signsTrafficDisabled:
+        type: integer
+      spotsParking:
+        type: integer
+      spotsParkingDisabled:
+        type: integer
+    type: object
+  types.RoadCategoriesObjDetail:
+    properties:
+      codeCategoryRoad:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      nameCategoryRoad:
+        type: string
+    type: object
+  types.RoadsObjDetail:
+    properties:
+      boundaryRoad:
+        type: string
+      codeRoad:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      gradeRoad:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      lengthRoad:
+        type: string
+      limitSpeed:
+        type: integer
+      roadName:
+        type: string
+      spotsParking:
+        type: integer
+      spotsParkingDisabled:
+        type: integer
+      typeRoad:
+        type: string
+      widthRoad:
+        type: string
+    type: object
+  types.RolesObjDetail:
+    properties:
+      createdAt:
+        type: integer
+      description:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      roleName:
+        type: string
+    type: object
+  types.SegmentsObjDetail:
+    properties:
+      createdAt:
+        type: integer
+      description:
+        type: string
+      disabledParkingSpots:
+        type: integer
+      districtID:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      parkingSpots:
+        type: integer
+      partID:
+        type: string
+      roadID:
+        type: string
+      segmentBoundary:
+        type: string
+      segmentCode:
+        type: string
+      segmentLength:
+        type: string
+      segmentName:
+        type: string
+    type: object
+  types.UpdateAssignmentsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateAssignmentsByIDRequest:
+    properties:
+      accessEndDate:
+        type: integer
+      iDForm:
+        type: string
+      iDModule:
+        type: string
+      iDRole:
+        type: string
+      iDUser:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+    type: object
+  types.UpdateBaseRatesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateBaseRatesByIDRequest:
+    properties:
+      baseRate:
+        type: string
+      description:
+        type: string
+      fromMinutes:
+        type: integer
+      iDCategoryVehicle:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      toMinutes:
+        type: integer
+    type: object
+  types.UpdateCalendarsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateCalendarsByIDRequest:
+    properties:
+      description:
+        type: string
+      holidayIs:
+        type: boolean
+      iDContract:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      shamsiDate:
+        type: string
+      shiftWork:
+        type: string
+      weekday:
+        type: string
+      workDate:
+        type: string
+      year:
+        type: integer
+    type: object
+  types.UpdateCitiesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateCitiesByIDRequest:
+    properties:
+      boundary:
+        type: string
+      cityName:
+        type: string
+      codeCity:
+        type: string
+      iDCountry:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+    type: object
+  types.UpdateContractorsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateContractorsByIDRequest:
+    properties:
+      address:
+        type: string
+      ceoName:
+        type: string
+      codeContractor:
+        type: string
+      contractorName:
+        type: string
+      description:
+        type: string
+      email:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      numberAccountBank:
+        type: string
+      numberRegistration:
+        type: string
+      personContact:
+        type: string
+      phoneNumber:
+        type: string
+      signatoriesAuthorized:
+        type: string
+      typeContract:
+        type: string
+    type: object
+  types.UpdateContractsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateContractsByIDRequest:
+    properties:
+      amountContract:
+        type: integer
+      dateContract:
+        type: string
+      dateEnd:
+        type: string
+      dateStart:
+        type: string
+      description:
+        type: string
+      iDContractor:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      numberContract:
+        type: string
+      periodEquipment:
+        type: integer
+      periodOperation:
+        type: integer
+      typeContract:
+        type: string
+    type: object
+  types.UpdateCountriesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateCountriesByIDRequest:
+    properties:
+      area:
+        type: string
+      capital:
+        type: string
+      countryCode:
+        type: string
+      countryName:
+        type: string
+      currency:
+        type: string
+      geoBoundary:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      isoCode:
+        type: string
+      phoneCode:
+        type: string
+      population:
+        type: integer
+      region:
+        type: string
+    type: object
+  types.UpdateDevicePartsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateDevicePartsByIDRequest:
+    properties:
+      brand:
+        type: string
+      codePart:
+        type: string
+      dateExpiryWarranty:
+        type: string
+      dateInstallation:
+        type: string
+      description:
+        type: string
+      iDDevice:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      model:
+        type: string
+      numberSerial:
+        type: string
+      partName:
+        type: string
+      periodMaintenance:
+        type: string
+      typePart:
+        type: string
+    type: object
+  types.UpdateDevicesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateDevicesByIDRequest:
+    properties:
+      classDevice:
+        type: string
+      codeDevice:
+        type: string
+      dateExpiryInsurance:
+        type: string
+      dateExpiryWarranty:
+        type: string
+      dateInstallation:
+        type: string
+      description:
+        type: string
+      iDContractor:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      imageContract:
+        type: string
+      imageInsurance:
+        type: string
+      model:
+        type: string
+      numberSerial:
+        type: string
+    type: object
+  types.UpdateDistrictsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateDistrictsByIDRequest:
+    properties:
+      area:
+        type: string
+      boundaryGeo:
+        type: string
+      codeDistrict:
+        type: string
+      districtName:
+        type: string
+      iDCity:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      population:
+        type: integer
+    type: object
+  types.UpdateDriverLicensesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateDriverLicensesByIDRequest:
+    properties:
+      dateExpiry:
+        type: string
+      dateIssue:
+        type: string
+      description:
+        type: string
+      iDDriver:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      imageLicense:
+        type: string
+      licenseNumber:
+        type: string
+      typeLicense:
+        type: string
+    type: object
+  types.UpdateDriversByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateDriversByIDRequest:
+    properties:
+      address:
+        type: string
+      birthCertificateImage:
+        type: string
+      codeDriver:
+        type: string
+      codePostal:
+        type: string
+      dateEndEmployment:
+        type: string
+      dateStartEmployment:
+        type: string
+      description:
+        type: string
+      driverPhoto:
+        type: string
+      email:
+        type: string
+      firstName:
+        type: string
+      gender:
+        type: string
+      iDContractor:
+        type: string
+      iDNational:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      imageCardID:
+        type: string
+      imageCardServiceMilitary:
+        type: string
+      imageCertificateHealth:
+        type: string
+      imageRecordCriminal:
+        type: string
+      nameLast:
+        type: string
+      numberMobile:
+        type: string
+      numberPhone:
+        type: string
+      statusEmployment:
+        type: string
+      typeDriver:
+        type: string
+      typeShift:
+        type: string
+    type: object
+  types.UpdateExceptionsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateExceptionsByIDRequest:
+    properties:
+      carLicensePlates:
+        type: string
+      description:
+        type: string
+      documentImage:
+        type: string
+      endDate:
+        type: string
+      exceptionMultiplier:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      motorcycleLicensePlates:
+        type: string
+      notificationDate:
+        type: string
+      notificationNumber:
+        type: string
+      startDate:
+        type: string
+      userID:
+        type: string
+      vehicleType:
+        type: string
+    type: object
+  types.UpdateFormsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateFormsByIDRequest:
+    properties:
+      description:
+        type: string
+      formName:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+    type: object
+  types.UpdateModulesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateModulesByIDRequest:
+    properties:
+      description:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      moduleName:
+        type: string
+    type: object
+  types.UpdateParkingsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateParkingsByIDRequest:
+    properties:
+      boundaryParking:
+        type: string
+      codeParking:
+        type: string
+      description:
+        type: string
+      iDSegment:
+        type: string
+      id:
+        description: uint64 id
+        type: string
+      position:
+        type: string
+      statusAvailability:
+        type: string
+      typeParking:
+        type: string
+    type: object
+  types.UpdatePartsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdatePartsByIDRequest:
+    properties:
+      boundaryPart:
+        type: string
+      codePart:
+        type: string
+      description:
+        type: string
+      iDRoad:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      lengthPart:
+        type: string
+      partName:
+        type: string
+      spotsParking:
+        type: integer
+      spotsParkingDisabled:
+        type: integer
+    type: object
+  types.UpdatePeakHourMultipliersByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdatePeakHourMultipliersByIDRequest:
+    properties:
+      codeTimePeak:
+        type: string
+      description:
+        type: string
+      flag:
+        type: string
+      fromValid:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      multiplier:
+        type: string
+      timeEnd:
+        type: string
+      timeStart:
+        type: string
+      toValid:
+        type: string
+      weekday:
+        type: string
+    type: object
+  types.UpdateRatesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateRatesByIDRequest:
+    properties:
+      approvalDate:
+        type: string
+      approvalNumber:
+        type: string
+      baseRateID:
+        type: string
+      cityID:
+        type: string
+      code:
+        type: string
+      description:
+        type: string
+      endTime:
+        type: string
+      exceptionsID:
+        type: string
+      goodPercentage:
+        type: integer
+      id:
+        description: uint64 id
+        type: integer
+      latePenalty:
+        type: string
+      latePenaltyMax:
+        type: string
+      normalSettlementPeriod:
+        type: integer
+      peakHourMultiplier:
+        type: string
+      rateMultiplier:
+        type: string
+      roadCategoryID:
+        type: string
+      startTime:
+        type: string
+      timeCycleMinutes:
+        type: integer
+      validFrom:
+        type: string
+      validTo:
+        type: string
+      year:
+        type: integer
+    type: object
+  types.UpdateRingsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateRingsByIDRequest:
+    properties:
+      boundaryRing:
+        type: string
+      codeRing:
+        type: string
+      description:
+        type: string
+      distanceBuffer:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      lengthRing:
+        type: string
+      nameRing:
+        type: string
+      pointStart:
+        type: string
+      signsTraffic:
+        type: integer
+      signsTrafficDisabled:
+        type: integer
+      spotsParking:
+        type: integer
+      spotsParkingDisabled:
+        type: integer
+    type: object
+  types.UpdateRoadCategoriesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateRoadCategoriesByIDRequest:
+    properties:
+      codeCategoryRoad:
+        type: string
+      description:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      nameCategoryRoad:
+        type: string
+    type: object
+  types.UpdateRoadsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateRoadsByIDRequest:
+    properties:
+      boundaryRoad:
+        type: string
+      codeRoad:
+        type: string
+      description:
+        type: string
+      gradeRoad:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      lengthRoad:
+        type: string
+      limitSpeed:
+        type: integer
+      roadName:
+        type: string
+      spotsParking:
+        type: integer
+      spotsParkingDisabled:
+        type: integer
+      typeRoad:
+        type: string
+      widthRoad:
+        type: string
+    type: object
+  types.UpdateRolesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateRolesByIDRequest:
+    properties:
+      description:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      roleName:
+        type: string
+    type: object
+  types.UpdateSegmentsByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateSegmentsByIDRequest:
+    properties:
+      description:
+        type: string
+      disabledParkingSpots:
+        type: integer
+      districtID:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      parkingSpots:
+        type: integer
+      partID:
+        type: string
+      roadID:
+        type: string
+      segmentBoundary:
+        type: string
+      segmentCode:
+        type: string
+      segmentLength:
+        type: string
+      segmentName:
+        type: string
+    type: object
+  types.UpdateUsersByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateUsersByIDRequest:
+    properties:
+      address:
+        type: string
+      codePostal:
+        type: string
+      email:
+        type: string
+      firstName:
+        type: string
+      gender:
+        type: string
+      iDNational:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      imageProfile:
+        type: string
+      lastName:
+        type: string
+      nameCompany:
+        type: string
+      numberMobile:
+        type: string
+      numberPhone:
+        type: string
+      password:
+        type: string
+      status:
+        type: string
+      username:
+        type: string
+    type: object
+  types.UpdateVehicleCategoriesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateVehicleCategoriesByIDRequest:
+    properties:
+      codeCategory:
+        type: string
+      description:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      nameCategory:
+        type: string
+    type: object
+  types.UpdateVehiclesByIDReply:
+    properties:
+      code:
+        description: return code
+        type: integer
+      data:
+        description: return data
+      msg:
+        description: return information description
+        type: string
+    type: object
+  types.UpdateVehiclesByIDRequest:
+    properties:
+      bodyInsuranceImage:
+        type: string
+      brand:
+        type: string
+      codeVehicle:
+        type: string
+      color:
+        type: string
+      description:
+        type: string
+      expiryInsuranceBody:
+        type: string
+      expiryInsurancePartyThird:
+        type: string
+      iDContractor:
+        type: string
+      id:
+        description: uint64 id
+        type: integer
+      imageCardVehicle:
+        type: string
+      imageDocumentVehicle:
+        type: string
+      kilometersInitial:
+        type: integer
+      manufactureOfYear:
+        type: integer
+      model:
+        type: string
+      plateLicense:
+        type: string
+      status:
+        type: string
+      thirdPartyInsuranceImage:
+        type: string
+      typeVehicle:
+        type: string
+      vin:
+        type: string
+    type: object
+  types.UsersObjDetail:
+    properties:
+      address:
+        type: string
+      codePostal:
+        type: string
+      createdAt:
+        type: integer
+      email:
+        type: string
+      firstName:
+        type: string
+      gender:
+        type: string
+      iDNational:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      imageProfile:
+        type: string
+      lastName:
+        type: string
+      nameCompany:
+        type: string
+      numberMobile:
+        type: string
+      numberPhone:
+        type: string
+      password:
+        type: string
+      status:
+        type: string
+      username:
+        type: string
+    type: object
+  types.VehicleCategoriesObjDetail:
+    properties:
+      codeCategory:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      nameCategory:
+        type: string
+    type: object
+  types.VehiclesObjDetail:
+    properties:
+      bodyInsuranceImage:
+        type: string
+      brand:
+        type: string
+      codeVehicle:
+        type: string
+      color:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      expiryInsuranceBody:
+        type: string
+      expiryInsurancePartyThird:
+        type: string
+      iDContractor:
+        type: string
+      id:
+        description: convert to uint64 id
+        type: integer
+      imageCardVehicle:
+        type: string
+      imageDocumentVehicle:
+        type: string
+      kilometersInitial:
+        type: integer
+      manufactureOfYear:
+        type: integer
+      model:
+        type: string
+      plateLicense:
+        type: string
+      status:
+        type: string
+      thirdPartyInsuranceImage:
+        type: string
+      typeVehicle:
+        type: string
+      vin:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: http server api docs
+  title: farin api docs
+  version: "2.0"
+paths:
+  /api/v1/assignments:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create assignments
+      parameters:
+      - description: assignments information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateAssignmentsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateAssignmentsReply'
+      security:
+      - BearerAuth: []
+      summary: create assignments
+      tags:
+      - assignments
+  /api/v1/assignments/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete assignments by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteAssignmentsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete assignments
+      tags:
+      - assignments
+    get:
+      consumes:
+      - application/json
+      description: get assignments detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetAssignmentsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get assignments detail
+      tags:
+      - assignments
+    put:
+      consumes:
+      - application/json
+      description: update assignments information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: assignments information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateAssignmentsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateAssignmentsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update assignments
+      tags:
+      - assignments
+  /api/v1/assignments/list:
+    post:
+      consumes:
+      - application/json
+      description: list of assignmentss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListAssignmentssReply'
+      security:
+      - BearerAuth: []
+      summary: list of assignmentss by query parameters
+      tags:
+      - assignments
+  /api/v1/auth/login/{vehicle_id}:
+    post:
+      consumes:
+      - application/json
+      description: authenticate user and return a token
+      parameters:
+      - description: login information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.DriverLogin'
+      - description: vehicle ID
+        in: path
+        name: vehicle_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DriverLoginResponse'
+      security:
+      - BearerAuth: []
+      summary: Login user
+      tags:
+      - authentication
+  /api/v1/baseRates:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create baseRates
+      parameters:
+      - description: baseRates information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateBaseRatesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateBaseRatesReply'
+      security:
+      - BearerAuth: []
+      summary: create baseRates
+      tags:
+      - baseRates
+  /api/v1/baseRates/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete baseRates by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteBaseRatesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete baseRates
+      tags:
+      - baseRates
+    get:
+      consumes:
+      - application/json
+      description: get baseRates detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetBaseRatesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get baseRates detail
+      tags:
+      - baseRates
+    put:
+      consumes:
+      - application/json
+      description: update baseRates information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: baseRates information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateBaseRatesByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateBaseRatesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update baseRates
+      tags:
+      - baseRates
+  /api/v1/baseRates/list:
+    post:
+      consumes:
+      - application/json
+      description: list of baseRatess by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListBaseRatessReply'
+      security:
+      - BearerAuth: []
+      summary: list of baseRatess by query parameters
+      tags:
+      - baseRates
+  /api/v1/calendars:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create calendars
+      parameters:
+      - description: calendars information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateCalendarsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateCalendarsReply'
+      security:
+      - BearerAuth: []
+      summary: create calendars
+      tags:
+      - calendars
+  /api/v1/calendars/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete calendars by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteCalendarsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete calendars
+      tags:
+      - calendars
+    get:
+      consumes:
+      - application/json
+      description: get calendars detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetCalendarsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get calendars detail
+      tags:
+      - calendars
+    put:
+      consumes:
+      - application/json
+      description: update calendars information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: calendars information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateCalendarsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateCalendarsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update calendars
+      tags:
+      - calendars
+  /api/v1/calendars/list:
+    post:
+      consumes:
+      - application/json
+      description: list of calendarss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListCalendarssReply'
+      security:
+      - BearerAuth: []
+      summary: list of calendarss by query parameters
+      tags:
+      - calendars
+  /api/v1/cities:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create cities
+      parameters:
+      - description: cities information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateCitiesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateCitiesReply'
+      security:
+      - BearerAuth: []
+      summary: create cities
+      tags:
+      - cities
+  /api/v1/cities/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete cities by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteCitiesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete cities
+      tags:
+      - cities
+    get:
+      consumes:
+      - application/json
+      description: get cities detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetCitiesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get cities detail
+      tags:
+      - cities
+    put:
+      consumes:
+      - application/json
+      description: update cities information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: cities information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateCitiesByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateCitiesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update cities
+      tags:
+      - cities
+  /api/v1/cities/list:
+    post:
+      consumes:
+      - application/json
+      description: list of citiess by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListCitiessReply'
+      security:
+      - BearerAuth: []
+      summary: list of citiess by query parameters
+      tags:
+      - cities
+  /api/v1/contractors:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create contractors
+      parameters:
+      - description: contractors information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateContractorsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateContractorsReply'
+      security:
+      - BearerAuth: []
+      summary: create contractors
+      tags:
+      - contractors
+  /api/v1/contractors/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete contractors by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteContractorsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete contractors
+      tags:
+      - contractors
+    get:
+      consumes:
+      - application/json
+      description: get contractors detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetContractorsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get contractors detail
+      tags:
+      - contractors
+    put:
+      consumes:
+      - application/json
+      description: update contractors information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: contractors information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateContractorsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateContractorsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update contractors
+      tags:
+      - contractors
+  /api/v1/contractors/list:
+    post:
+      consumes:
+      - application/json
+      description: list of contractorss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListContractorssReply'
+      security:
+      - BearerAuth: []
+      summary: list of contractorss by query parameters
+      tags:
+      - contractors
+  /api/v1/contracts:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create contracts
+      parameters:
+      - description: contracts information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateContractsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateContractsReply'
+      security:
+      - BearerAuth: []
+      summary: create contracts
+      tags:
+      - contracts
+  /api/v1/contracts/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete contracts by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteContractsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete contracts
+      tags:
+      - contracts
+    get:
+      consumes:
+      - application/json
+      description: get contracts detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetContractsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get contracts detail
+      tags:
+      - contracts
+    put:
+      consumes:
+      - application/json
+      description: update contracts information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: contracts information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateContractsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateContractsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update contracts
+      tags:
+      - contracts
+  /api/v1/contracts/list:
+    post:
+      consumes:
+      - application/json
+      description: list of contractss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListContractssReply'
+      security:
+      - BearerAuth: []
+      summary: list of contractss by query parameters
+      tags:
+      - contracts
+  /api/v1/countries:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create countries
+      parameters:
+      - description: countries information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateCountriesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateCountriesReply'
+      security:
+      - BearerAuth: []
+      summary: create countries
+      tags:
+      - countries
+  /api/v1/countries/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete countries by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteCountriesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete countries
+      tags:
+      - countries
+    get:
+      consumes:
+      - application/json
+      description: get countries detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetCountriesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get countries detail
+      tags:
+      - countries
+    put:
+      consumes:
+      - application/json
+      description: update countries information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: countries information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateCountriesByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateCountriesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update countries
+      tags:
+      - countries
+  /api/v1/countries/list:
+    post:
+      consumes:
+      - application/json
+      description: list of countriess by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListCountriessReply'
+      security:
+      - BearerAuth: []
+      summary: list of countriess by query parameters
+      tags:
+      - countries
+  /api/v1/deviceParts:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create deviceParts
+      parameters:
+      - description: deviceParts information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateDevicePartsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateDevicePartsReply'
+      security:
+      - BearerAuth: []
+      summary: create deviceParts
+      tags:
+      - deviceParts
+  /api/v1/deviceParts/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete deviceParts by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteDevicePartsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete deviceParts
+      tags:
+      - deviceParts
+    get:
+      consumes:
+      - application/json
+      description: get deviceParts detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetDevicePartsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get deviceParts detail
+      tags:
+      - deviceParts
+    put:
+      consumes:
+      - application/json
+      description: update deviceParts information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: deviceParts information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateDevicePartsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateDevicePartsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update deviceParts
+      tags:
+      - deviceParts
+  /api/v1/deviceParts/list:
+    post:
+      consumes:
+      - application/json
+      description: list of devicePartss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListDevicePartssReply'
+      security:
+      - BearerAuth: []
+      summary: list of devicePartss by query parameters
+      tags:
+      - deviceParts
+  /api/v1/devices:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create devices
+      parameters:
+      - description: devices information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateDevicesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateDevicesReply'
+      security:
+      - BearerAuth: []
+      summary: create devices
+      tags:
+      - devices
+  /api/v1/devices/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete devices by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteDevicesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete devices
+      tags:
+      - devices
+    get:
+      consumes:
+      - application/json
+      description: get devices detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetDevicesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get devices detail
+      tags:
+      - devices
+    put:
+      consumes:
+      - application/json
+      description: update devices information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: devices information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateDevicesByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateDevicesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update devices
+      tags:
+      - devices
+  /api/v1/devices/list:
+    post:
+      consumes:
+      - application/json
+      description: list of devicess by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListDevicessReply'
+      security:
+      - BearerAuth: []
+      summary: list of devicess by query parameters
+      tags:
+      - devices
+  /api/v1/districts:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create districts
+      parameters:
+      - description: districts information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateDistrictsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateDistrictsReply'
+      security:
+      - BearerAuth: []
+      summary: create districts
+      tags:
+      - districts
+  /api/v1/districts/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete districts by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteDistrictsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete districts
+      tags:
+      - districts
+    get:
+      consumes:
+      - application/json
+      description: get districts detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetDistrictsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get districts detail
+      tags:
+      - districts
+    put:
+      consumes:
+      - application/json
+      description: update districts information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: districts information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateDistrictsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateDistrictsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update districts
+      tags:
+      - districts
+  /api/v1/districts/list:
+    post:
+      consumes:
+      - application/json
+      description: list of districtss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListDistrictssReply'
+      security:
+      - BearerAuth: []
+      summary: list of districtss by query parameters
+      tags:
+      - districts
+  /api/v1/driverLicenses:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create driverLicenses
+      parameters:
+      - description: driverLicenses information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateDriverLicensesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateDriverLicensesReply'
+      security:
+      - BearerAuth: []
+      summary: create driverLicenses
+      tags:
+      - driverLicenses
+  /api/v1/driverLicenses/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete driverLicenses by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteDriverLicensesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete driverLicenses
+      tags:
+      - driverLicenses
+    get:
+      consumes:
+      - application/json
+      description: get driverLicenses detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetDriverLicensesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get driverLicenses detail
+      tags:
+      - driverLicenses
+    put:
+      consumes:
+      - application/json
+      description: update driverLicenses information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: driverLicenses information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateDriverLicensesByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateDriverLicensesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update driverLicenses
+      tags:
+      - driverLicenses
+  /api/v1/driverLicenses/list:
+    post:
+      consumes:
+      - application/json
+      description: list of driverLicensess by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListDriverLicensessReply'
+      security:
+      - BearerAuth: []
+      summary: list of driverLicensess by query parameters
+      tags:
+      - driverLicenses
+  /api/v1/drivers:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create drivers
+      parameters:
+      - description: drivers information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateDriversRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateDriversReply'
+      security:
+      - BearerAuth: []
+      summary: create drivers
+      tags:
+      - drivers
+  /api/v1/drivers/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete drivers by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteDriversByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete drivers
+      tags:
+      - drivers
+    get:
+      consumes:
+      - application/json
+      description: get drivers detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetDriversByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get drivers detail
+      tags:
+      - drivers
+    put:
+      consumes:
+      - application/json
+      description: update drivers information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: drivers information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateDriversByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateDriversByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update drivers
+      tags:
+      - drivers
+  /api/v1/drivers/list:
+    post:
+      consumes:
+      - application/json
+      description: list of driverss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListDriverssReply'
+      security:
+      - BearerAuth: []
+      summary: list of driverss by query parameters
+      tags:
+      - drivers
+  /api/v1/exceptions:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create exceptions
+      parameters:
+      - description: exceptions information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateExceptionsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateExceptionsReply'
+      security:
+      - BearerAuth: []
+      summary: create exceptions
+      tags:
+      - exceptions
+  /api/v1/exceptions/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete exceptions by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteExceptionsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete exceptions
+      tags:
+      - exceptions
+    get:
+      consumes:
+      - application/json
+      description: get exceptions detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetExceptionsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get exceptions detail
+      tags:
+      - exceptions
+    put:
+      consumes:
+      - application/json
+      description: update exceptions information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: exceptions information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateExceptionsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateExceptionsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update exceptions
+      tags:
+      - exceptions
+  /api/v1/exceptions/list:
+    post:
+      consumes:
+      - application/json
+      description: list of exceptionss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListExceptionssReply'
+      security:
+      - BearerAuth: []
+      summary: list of exceptionss by query parameters
+      tags:
+      - exceptions
+  /api/v1/forms:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create forms
+      parameters:
+      - description: forms information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateFormsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateFormsReply'
+      security:
+      - BearerAuth: []
+      summary: create forms
+      tags:
+      - forms
+  /api/v1/forms/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete forms by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteFormsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete forms
+      tags:
+      - forms
+    get:
+      consumes:
+      - application/json
+      description: get forms detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetFormsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get forms detail
+      tags:
+      - forms
+    put:
+      consumes:
+      - application/json
+      description: update forms information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: forms information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateFormsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateFormsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update forms
+      tags:
+      - forms
+  /api/v1/forms/list:
+    post:
+      consumes:
+      - application/json
+      description: list of formss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListFormssReply'
+      security:
+      - BearerAuth: []
+      summary: list of formss by query parameters
+      tags:
+      - forms
+  /api/v1/modules:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create modules
+      parameters:
+      - description: modules information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateModulesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateModulesReply'
+      security:
+      - BearerAuth: []
+      summary: create modules
+      tags:
+      - modules
+  /api/v1/modules/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete modules by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteModulesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete modules
+      tags:
+      - modules
+    get:
+      consumes:
+      - application/json
+      description: get modules detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetModulesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get modules detail
+      tags:
+      - modules
+    put:
+      consumes:
+      - application/json
+      description: update modules information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: modules information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateModulesByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateModulesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update modules
+      tags:
+      - modules
+  /api/v1/modules/list:
+    post:
+      consumes:
+      - application/json
+      description: list of moduless by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListModulessReply'
+      security:
+      - BearerAuth: []
+      summary: list of moduless by query parameters
+      tags:
+      - modules
+  /api/v1/parkings:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create parkings
+      parameters:
+      - description: parkings information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateParkingsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateParkingsReply'
+      security:
+      - BearerAuth: []
+      summary: create parkings
+      tags:
+      - parkings
+  /api/v1/parkings/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete parkings by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteParkingsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete parkings
+      tags:
+      - parkings
+    get:
+      consumes:
+      - application/json
+      description: get parkings detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetParkingsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get parkings detail
+      tags:
+      - parkings
+    put:
+      consumes:
+      - application/json
+      description: update parkings information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: parkings information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateParkingsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateParkingsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update parkings
+      tags:
+      - parkings
+  /api/v1/parkings/list:
+    post:
+      consumes:
+      - application/json
+      description: list of parkingss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListParkingssReply'
+      security:
+      - BearerAuth: []
+      summary: list of parkingss by query parameters
+      tags:
+      - parkings
+  /api/v1/parts:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create parts
+      parameters:
+      - description: parts information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreatePartsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreatePartsReply'
+      security:
+      - BearerAuth: []
+      summary: create parts
+      tags:
+      - parts
+  /api/v1/parts/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete parts by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeletePartsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete parts
+      tags:
+      - parts
+    get:
+      consumes:
+      - application/json
+      description: get parts detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetPartsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get parts detail
+      tags:
+      - parts
+    put:
+      consumes:
+      - application/json
+      description: update parts information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: parts information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdatePartsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdatePartsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update parts
+      tags:
+      - parts
+  /api/v1/parts/list:
+    post:
+      consumes:
+      - application/json
+      description: list of partss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListPartssReply'
+      security:
+      - BearerAuth: []
+      summary: list of partss by query parameters
+      tags:
+      - parts
+  /api/v1/peakHourMultipliers:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create peakHourMultipliers
+      parameters:
+      - description: peakHourMultipliers information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreatePeakHourMultipliersRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreatePeakHourMultipliersReply'
+      security:
+      - BearerAuth: []
+      summary: create peakHourMultipliers
+      tags:
+      - peakHourMultipliers
+  /api/v1/peakHourMultipliers/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete peakHourMultipliers by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeletePeakHourMultipliersByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete peakHourMultipliers
+      tags:
+      - peakHourMultipliers
+    get:
+      consumes:
+      - application/json
+      description: get peakHourMultipliers detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetPeakHourMultipliersByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get peakHourMultipliers detail
+      tags:
+      - peakHourMultipliers
+    put:
+      consumes:
+      - application/json
+      description: update peakHourMultipliers information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: peakHourMultipliers information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdatePeakHourMultipliersByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdatePeakHourMultipliersByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update peakHourMultipliers
+      tags:
+      - peakHourMultipliers
+  /api/v1/peakHourMultipliers/list:
+    post:
+      consumes:
+      - application/json
+      description: list of peakHourMultiplierss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListPeakHourMultiplierssReply'
+      security:
+      - BearerAuth: []
+      summary: list of peakHourMultiplierss by query parameters
+      tags:
+      - peakHourMultipliers
+  /api/v1/rates:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create rates
+      parameters:
+      - description: rates information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateRatesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateRatesReply'
+      security:
+      - BearerAuth: []
+      summary: create rates
+      tags:
+      - rates
+  /api/v1/rates/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete rates by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteRatesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete rates
+      tags:
+      - rates
+    get:
+      consumes:
+      - application/json
+      description: get rates detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetRatesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get rates detail
+      tags:
+      - rates
+    put:
+      consumes:
+      - application/json
+      description: update rates information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: rates information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateRatesByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateRatesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update rates
+      tags:
+      - rates
+  /api/v1/rates/list:
+    post:
+      consumes:
+      - application/json
+      description: list of ratess by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListRatessReply'
+      security:
+      - BearerAuth: []
+      summary: list of ratess by query parameters
+      tags:
+      - rates
+  /api/v1/rings:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create rings
+      parameters:
+      - description: rings information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateRingsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateRingsReply'
+      security:
+      - BearerAuth: []
+      summary: create rings
+      tags:
+      - rings
+  /api/v1/rings/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete rings by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteRingsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete rings
+      tags:
+      - rings
+    get:
+      consumes:
+      - application/json
+      description: get rings detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetRingsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get rings detail
+      tags:
+      - rings
+    put:
+      consumes:
+      - application/json
+      description: update rings information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: rings information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateRingsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateRingsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update rings
+      tags:
+      - rings
+  /api/v1/rings/list:
+    post:
+      consumes:
+      - application/json
+      description: list of ringss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListRingssReply'
+      security:
+      - BearerAuth: []
+      summary: list of ringss by query parameters
+      tags:
+      - rings
+  /api/v1/roadCategories:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create roadCategories
+      parameters:
+      - description: roadCategories information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateRoadCategoriesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateRoadCategoriesReply'
+      security:
+      - BearerAuth: []
+      summary: create roadCategories
+      tags:
+      - roadCategories
+  /api/v1/roadCategories/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete roadCategories by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteRoadCategoriesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete roadCategories
+      tags:
+      - roadCategories
+    get:
+      consumes:
+      - application/json
+      description: get roadCategories detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetRoadCategoriesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get roadCategories detail
+      tags:
+      - roadCategories
+    put:
+      consumes:
+      - application/json
+      description: update roadCategories information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: roadCategories information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateRoadCategoriesByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateRoadCategoriesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update roadCategories
+      tags:
+      - roadCategories
+  /api/v1/roadCategories/list:
+    post:
+      consumes:
+      - application/json
+      description: list of roadCategoriess by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListRoadCategoriessReply'
+      security:
+      - BearerAuth: []
+      summary: list of roadCategoriess by query parameters
+      tags:
+      - roadCategories
+  /api/v1/roads:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create roads
+      parameters:
+      - description: roads information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateRoadsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateRoadsReply'
+      security:
+      - BearerAuth: []
+      summary: create roads
+      tags:
+      - roads
+  /api/v1/roads/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete roads by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteRoadsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete roads
+      tags:
+      - roads
+    get:
+      consumes:
+      - application/json
+      description: get roads detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetRoadsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get roads detail
+      tags:
+      - roads
+    put:
+      consumes:
+      - application/json
+      description: update roads information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: roads information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateRoadsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateRoadsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update roads
+      tags:
+      - roads
+  /api/v1/roads/list:
+    post:
+      consumes:
+      - application/json
+      description: list of roadss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListRoadssReply'
+      security:
+      - BearerAuth: []
+      summary: list of roadss by query parameters
+      tags:
+      - roads
+  /api/v1/roles:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create roles
+      parameters:
+      - description: roles information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateRolesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateRolesReply'
+      security:
+      - BearerAuth: []
+      summary: create roles
+      tags:
+      - roles
+  /api/v1/roles/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete roles by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteRolesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete roles
+      tags:
+      - roles
+    get:
+      consumes:
+      - application/json
+      description: get roles detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetRolesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get roles detail
+      tags:
+      - roles
+    put:
+      consumes:
+      - application/json
+      description: update roles information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: roles information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateRolesByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateRolesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update roles
+      tags:
+      - roles
+  /api/v1/roles/list:
+    post:
+      consumes:
+      - application/json
+      description: list of roless by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListRolessReply'
+      security:
+      - BearerAuth: []
+      summary: list of roless by query parameters
+      tags:
+      - roles
+  /api/v1/segments:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create segments
+      parameters:
+      - description: segments information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateSegmentsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateSegmentsReply'
+      security:
+      - BearerAuth: []
+      summary: create segments
+      tags:
+      - segments
+  /api/v1/segments/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete segments by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteSegmentsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete segments
+      tags:
+      - segments
+    get:
+      consumes:
+      - application/json
+      description: get segments detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetSegmentsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get segments detail
+      tags:
+      - segments
+    put:
+      consumes:
+      - application/json
+      description: update segments information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: segments information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateSegmentsByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateSegmentsByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update segments
+      tags:
+      - segments
+  /api/v1/segments/list:
+    post:
+      consumes:
+      - application/json
+      description: list of segmentss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListSegmentssReply'
+      security:
+      - BearerAuth: []
+      summary: list of segmentss by query parameters
+      tags:
+      - segments
+  /api/v1/users:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create users
+      parameters:
+      - description: users information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateUsersRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateUsersReply'
+      security:
+      - BearerAuth: []
+      summary: create users
+      tags:
+      - users
+  /api/v1/users/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete users by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteUsersByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete users
+      tags:
+      - users
+    get:
+      consumes:
+      - application/json
+      description: get users detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetUsersByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get users detail
+      tags:
+      - users
+    put:
+      consumes:
+      - application/json
+      description: update users information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: users information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateUsersByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateUsersByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update users
+      tags:
+      - users
+  /api/v1/users/list:
+    post:
+      consumes:
+      - application/json
+      description: list of userss by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListUserssReply'
+      security:
+      - BearerAuth: []
+      summary: list of userss by query parameters
+      tags:
+      - users
+  /api/v1/vehicleCategories:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create vehicleCategories
+      parameters:
+      - description: vehicleCategories information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateVehicleCategoriesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateVehicleCategoriesReply'
+      security:
+      - BearerAuth: []
+      summary: create vehicleCategories
+      tags:
+      - vehicleCategories
+  /api/v1/vehicleCategories/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete vehicleCategories by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteVehicleCategoriesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete vehicleCategories
+      tags:
+      - vehicleCategories
+    get:
+      consumes:
+      - application/json
+      description: get vehicleCategories detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetVehicleCategoriesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get vehicleCategories detail
+      tags:
+      - vehicleCategories
+    put:
+      consumes:
+      - application/json
+      description: update vehicleCategories information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: vehicleCategories information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateVehicleCategoriesByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateVehicleCategoriesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update vehicleCategories
+      tags:
+      - vehicleCategories
+  /api/v1/vehicleCategories/list:
+    post:
+      consumes:
+      - application/json
+      description: list of vehicleCategoriess by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListVehicleCategoriessReply'
+      security:
+      - BearerAuth: []
+      summary: list of vehicleCategoriess by query parameters
+      tags:
+      - vehicleCategories
+  /api/v1/vehicles:
+    post:
+      consumes:
+      - application/json
+      description: submit information to create vehicles
+      parameters:
+      - description: vehicles information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateVehiclesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.CreateVehiclesReply'
+      security:
+      - BearerAuth: []
+      summary: create vehicles
+      tags:
+      - vehicles
+  /api/v1/vehicles/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete vehicles by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.DeleteVehiclesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: delete vehicles
+      tags:
+      - vehicles
+    get:
+      consumes:
+      - application/json
+      description: get vehicles detail by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GetVehiclesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: get vehicles detail
+      tags:
+      - vehicles
+    put:
+      consumes:
+      - application/json
+      description: update vehicles information by id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: vehicles information
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateVehiclesByIDRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.UpdateVehiclesByIDReply'
+      security:
+      - BearerAuth: []
+      summary: update vehicles
+      tags:
+      - vehicles
+  /api/v1/vehicles/list:
+    post:
+      consumes:
+      - application/json
+      description: list of vehicless by paging and conditions
+      parameters:
+      - description: query parameters
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/types.Params'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ListVehiclessReply'
+      security:
+      - BearerAuth: []
+      summary: list of vehicless by query parameters
+      tags:
+      - vehicles
+schemes:
+- http
+- https
+securityDefinitions:
+  BearerAuth:
+    description: Type Bearer your-jwt-token to Value
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

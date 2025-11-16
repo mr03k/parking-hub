@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: haproxy-config
+data:
+  haproxy.cfg: |
+    global
+      log stdout format raw local0
+      maxconn 4096
+      user haproxy
+      group haproxy
+      daemon
+
+    defaults
+      log global
+      mode http
+      option dontlognull
+      timeout connect 5000
+      timeout client 50000
+      timeout server 50000
+
+    frontend https-in
+      mode tcp
+      bind *:8443
+      default_backend secure_servers
+
+    frontend http-in
+      bind *:8080
+      mode tcp
+      default_backend servers
+
+    frontend tls-amqp
+      mode tcp
+      bind *:15672
+      default_backend amqp_servers
+    
+    frontend amqp
+      mode tcp
+      bind *:5673
+      default_backend amqp_simple_servers
+  
+    # frontend postgres
+    #   mode tcp
+    #   bind *:5432
+    #   default_backend postgres_servers
+
+    backend servers
+      mode tcp
+      balance leastconn
+      server gateway envoy-gateway-resources-default-gateway-b7f1f01c.envoy-gateway-system:80 check send-proxy-v2
+
+    backend secure_servers
+      mode tcp
+      balance leastconn
+      server gateway envoy-gateway-resources-default-gateway-b7f1f01c.envoy-gateway-system:443 check send-proxy-v2
+    
+    backend amqp_servers
+      mode tcp
+      balance leastconn
+      server gateway envoy-gateway-resources-default-gateway-b7f1f01c.envoy-gateway-system:5672 check send-proxy-v2
+
+    backend postgres_servers
+      mode tcp
+      balance leastconn
+      server gateway envoy-gateway-resources-default-gateway-b7f1f01c.envoy-gateway-system:5432 check send-proxy-v2
+
+    backend amqp_simple_servers
+      mode tcp
+      balance leastconn
+      server gateway envoy-gateway-resources-default-gateway-b7f1f01c.envoy-gateway-system:5673 check send-proxy-v2
+

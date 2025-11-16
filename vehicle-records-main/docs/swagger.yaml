@@ -1,0 +1,172 @@
+definitions:
+  ? git_abanppc_com_farin-project_vehicle-records_app_api_response.Response-git_abanppc_com_farin-project_vehicle-records_domain_entity_VehicleRecord
+  : properties:
+      data:
+        $ref: '#/definitions/git_abanppc_com_farin-project_vehicle-records_domain_entity.VehicleRecord'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  git_abanppc_com_farin-project_vehicle-records_app_api_response.Response-swagger_EmptyObject:
+    properties:
+      data:
+        $ref: '#/definitions/swagger.EmptyObject'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  git_abanppc_com_farin-project_vehicle-records_domain_entity.CitizenVehiclePhoto:
+    properties:
+      CitizenVehiclePhoto:
+        type: string
+      CitizenVehiclePhotoArea:
+        type: string
+      CitizenVehiclePhotoCaptureTime:
+        type: integer
+      CitizenVehiclePlateCropPhoto:
+        type: string
+      LPRVehicleCameraId:
+        type: integer
+      OCRAccuracy:
+        type: number
+      PhotoSequenceId:
+        type: integer
+      RecordId:
+        type: string
+      createdAt:
+        type: integer
+      id:
+        type: string
+      updatedAt:
+        type: integer
+    type: object
+  git_abanppc_com_farin-project_vehicle-records_domain_entity.VehicleRecord:
+    properties:
+      BackoffTime:
+        description: unix timestamp backoff time
+        type: integer
+      CitizenParkType:
+        type: integer
+      CitizenPlateNumber:
+        type: string
+      CitizenPlateNumberNumeric:
+        type: integer
+      CitizenVehicleColor:
+        type: integer
+      CitizenVehicleDegree:
+        type: integer
+      CitizenVehicleDistance:
+        type: integer
+      CitizenVehicleModel:
+        type: string
+      CitizenVehiclePlateNumberColor:
+        type: integer
+      CitizenVehiclePlateNumberType:
+        type: integer
+      CitizenVehicleType:
+        type: integer
+      CreatedAt:
+        type: integer
+      CycleID:
+        type: integer
+      IsCitizenVehicleDistorted:
+        type: boolean
+      IsCitizenVehiclePlateNumberVisible:
+        type: boolean
+      IsJunction:
+        type: boolean
+      LPRSystemAppId:
+        type: string
+      LPRSystemAppVersion:
+        type: string
+      LPRSystemId:
+        type: string
+      LPRVehicleGPSError:
+        type: integer
+      LPRVehicleGPSLatitude:
+        type: number
+      LPRVehicleGPSLongitude:
+        type: number
+      LPRVehicleGPSSpeed:
+        type: number
+      LPRVehicleId:
+        type: string
+      LPRVehicleIsGPSSignalValid:
+        type: boolean
+      LPRVehicleRTKError:
+        type: integer
+      LPRVehicleRTKLatitude:
+        type: number
+      LPRVehicleRTKLongitude:
+        type: number
+      OCRAccuracy:
+        type: number
+      ParkingLotId:
+        type: integer
+      PlateDetectionID:
+        type: integer
+      RecordId:
+        type: string
+      RecordSendTime:
+        type: integer
+      RecordStoreTime:
+        type: integer
+      Retries:
+        type: integer
+      RingId:
+        type: integer
+      RoadCode:
+        description: streetCode
+        type: integer
+      SegmentId:
+        type: integer
+      Sent:
+        type: boolean
+      ShamsiTime:
+        type: string
+      StreetId:
+        type: integer
+      TehranRequestID:
+        type: string
+      UpdatedAt:
+        type: integer
+      UserId:
+        type: string
+      VehiclePhotos:
+        items:
+          $ref: '#/definitions/git_abanppc_com_farin-project_vehicle-records_domain_entity.CitizenVehiclePhoto'
+        type: array
+    type: object
+  swagger.EmptyObject:
+    type: object
+info:
+  contact: {}
+paths:
+  /v1/vehicle-records/{id}:
+    get:
+      description: Retrieve vehicleRecord details by ID
+      parameters:
+      - description: VehicleRecord ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/git_abanppc_com_farin-project_vehicle-records_app_api_response.Response-git_abanppc_com_farin-project_vehicle-records_domain_entity_VehicleRecord'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/git_abanppc_com_farin-project_vehicle-records_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/git_abanppc_com_farin-project_vehicle-records_app_api_response.Response-swagger_EmptyObject'
+      summary: Get vehicleRecord details
+      tags:
+      - vehicleRecords
+swagger: "2.0"

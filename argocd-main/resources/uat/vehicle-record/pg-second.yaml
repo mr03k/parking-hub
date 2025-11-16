@@ -1,0 +1,77 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: pg-vehicle-record-second
+  namespace: uat
+spec:
+  backup:
+    barmanObjectStore:
+      destinationPath: s3://db-backups
+      endpointURL: https://z10.s3.cloud.ir
+      s3Credentials:
+        accessKeyId:
+          key: S3_ACCESS_KEY
+          name: s3-backup-secret
+        secretAccessKey:
+          key: S3_SECRET_KEY
+          name: s3-backup-secret
+    retentionPolicy: "10d"
+  instances: 1
+  imageName: ghcr.io/cloudnative-pg/postgis:16-3.5-114@sha256:e332282b03d44e96704de8c6f472728f8c6ae0c235a414da3669d13783fe0f1d
+  storage:
+    size: 70Gi
+  managed:
+    services:
+      additional:
+      - selectorType: rw
+        updateStrategy: patch
+        serviceTemplate:
+          metadata:
+            name: "pg-vehicle-record-second-nodeport"
+          spec:
+            type: NodePort
+    roles:
+    - name: aban
+      ensure: present
+      comment: aban
+      login: true
+      superuser: true
+      inherit: true
+      connectionLimit: -1
+      inRoles:
+      - pg_monitor
+      - pg_signal_backend
+    - name: bi_user
+      ensure: present
+      comment: b
+      login: true
+      inherit: true
+      connectionLimit: 20
+      inRoles:
+      - pg_monitor
+      - pg_signal_backend
+      - pg_read_all_data
+      passwordSecret:
+        name: postgres-bi-user-secret
+  bootstrap:
+    recovery:
+      database: vehicle_records
+      owner: aban
+      secret:
+        name: postgres-user-secret
+      source: pg-vehicle-record
+  externalClusters:
+    - name: pg-vehicle-record
+      barmanObjectStore:
+        serverName: pg-vehicle-record
+        destinationPath: s3://db-backups
+        endpointURL: https://z10.s3.cloud.ir # Optional
+        s3Credentials:
+          accessKeyId:
+            name: s3-backup-secret
+            key: S3_ACCESS_KEY
+          secretAccessKey:
+            name: s3-backup-secret
+            key: S3_SECRET_KEY
+        wal:
+          maxParallel: 8

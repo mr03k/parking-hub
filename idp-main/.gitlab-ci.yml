@@ -1,0 +1,29 @@
+
+
+stages:
+  - build
+  - test
+  - check_deploy
+  - deploy
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+  HELM_NAME: $CI_PROJECT_NAME
+  IMAGE_NAME: $CI_REGISTRY/lenz/$CI_PROJECT_NAME:$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHA
+
+
+
+build-docker:
+  image: docker:19.03.11
+  stage: build
+  
+  before_script:
+    - env
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWD $CI_REGISTRY
+  script:
+    - echo "Building the Docker image... $IMAGE_NAME"
+    - docker build . -t $IMAGE_NAME
+    - docker push $IMAGE_NAME
+
+

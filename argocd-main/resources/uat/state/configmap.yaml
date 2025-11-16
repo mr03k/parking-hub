@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: farin-state
+  namespace: uat
+data:
+  env: |
+    ENVIRONMENT=production
+    DATABASE_HOST=postgresql://aban:AbanXXSTATESXX2boZZ12X@pg-state-rw:5432/states?sslmode=disable
+    HTTP_PORT=80
+
+    RABBITMQ_HOST=amqps://default_user_bkVtZ-pUWMLqTFliGYJ:ae0FWgOoLiEmBZBW5MGQa2lMBauLKQpX@amqp.gw.k8s.sh.aban.io:5672/
+    RABBITMQ_EVENT_EXCHANGE=farin_geodata
+    RABBITMQ_STATE_QUEUE=states

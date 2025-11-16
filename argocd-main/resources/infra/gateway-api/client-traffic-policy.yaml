@@ -1,0 +1,14 @@
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: ClientTrafficPolicy
+metadata:
+  name: client-traffic-policy
+  namespace: gateway-resources
+spec:
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: Gateway
+    name: default-gateway
+  enableProxyProtocol: true
+  headers:
+    withUnderscoresAction: DropHeader
+    enableEnvoyHeaders: true

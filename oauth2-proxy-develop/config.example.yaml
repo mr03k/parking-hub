@@ -1,0 +1,35 @@
+server:
+  http:
+    port: 8080
+    host: ""
+    production: true
+    basepath: oauth2
+  domainurl: "https://127.0.0.1:8080"
+service:
+  scheduler:
+    enabled: false
+    interval: "3s"
+oauth:
+  clientid: client_id
+  clientsecret: secret
+  providerurl: https://example.com
+
+security:
+  secret: W+c%1*~(E)^2^#sxx^^7%b34 #24 bytes secret key Make sure to change this on deployment
+
+observability:
+  tracing:
+    enabled: true
+    authorizationheader: "Basic cm9vdEBleGFtcGxlLmNvbTpDNjhVQXhzUUE1YnFpb2sz"
+    organization: "default"
+    streamName: "default"
+  metrics:
+    enabled: true
+    authorizationheader: "Basic cm9vdEBleGFtcGxlLmNvbTpDNjhVQXhzUUE1YnFpb2sz"
+    organization: "default"
+    streamName: "default"
+  logging:
+    level: "info"
+    authorizationheader: "Basic cm9vdEBleGFtcGxlLmNvbTpDNjhVQXhzUUE1YnFpb2sz"
+    organization: "default"
+    streamName: "default"

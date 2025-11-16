@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: farin-svc
+  namespace: farin
+spec:
+  selector:
+    app: farin
+  type: ClusterIP
+  ports:
+    - name: farin-svc-http-port
+      port: 8080
+      targetPort: 8080
+

@@ -1,0 +1,19 @@
+{
+  "UserId": null,
+  "DeviceId": "4BF7A5C2-3A97-4EBC0-F0F8-921D9C0D",
+  "CreationTime": 1734445579008,
+  "Location": {
+    "Speed": 0,
+    "Latitude": 34.54505495171397,
+    "Longitude": 50.790921785066686,
+    "Source": "WiFi"
+  },
+  "Network": {
+    "Speed": 400,
+    "IPAddress": "192.168.11.70",
+    "MACAddress": "C4BDE5E6A596",
+    "AdapterName": "Wi-Fi",
+    "AdapterType": "Wireless80211",
+    "AdapterDescription": "Intel(R) Wi-Fi 6E AX211 160MHz"
+  }
+}

@@ -1,0 +1,148 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: default-gateway
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  gatewayClassName: default-gateway-class
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 80
+      allowedRoutes:
+        namespaces:
+          from: All
+    # - name: https-test
+    #   protocol: HTTPS
+    #   port: 443
+    #   hostname: test.gw.k8s.sh.aban.io
+    #   allowedRoutes:
+    #     namespaces:
+    #       from: All
+    #   tls:
+    #     certificateRefs:
+    #     - group: ""
+    #       kind: Secret
+    #       name: first-tls-secret
+    #       namespace: gateway-resources
+    #     mode: Terminate
+
+    - name: https-argocd
+      protocol: HTTPS
+      port: 443
+      hostname: argocd.gw.k8s.sh.aban.io
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        certificateRefs:
+        - group: ""
+          kind: Secret
+          name: argocd-tls-secret
+          namespace: gateway-resources
+        mode: Terminate
+    # - name: https-app
+    #   protocol: HTTPS
+    #   port: 443
+    #   hostname: app.gw.k8s.sh.aban.io
+    #   allowedRoutes:
+    #     namespaces:
+    #       from: All
+    #   tls:
+    #     certificateRefs:
+    #     - group: ""
+    #       kind: Secret
+    #       name: app-tls-secret
+    #       namespace: gateway-resources
+    #     mode: Terminate
+    # - name: https-sg
+    #   protocol: HTTPS
+    #   port: 443
+    #   hostname: sg.gw.k8s.sh.aban.io
+    #   allowedRoutes:
+    #     namespaces:
+    #       from: All
+    #   tls:
+    #     certificateRefs:
+    #     - group: ""
+    #       kind: Secret
+    #       name: sg-tls-secret
+    #       namespace: gateway-resources
+    #     mode: Terminate
+    - name: tls-amqp
+      hostname: amqp.gw.k8s.sh.aban.io
+      protocol: TLS
+      port: 5672
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        mode: Terminate
+        certificateRefs:
+        - group: ""
+          kind: Secret
+          name: amqp-tls-secret
+          namespace: gateway-resources
+    - name: amqp
+      protocol: TCP
+      port: 5673
+      allowedRoutes:
+        namespaces:
+          from: All
+    # - name: https-minio
+    #   protocol: HTTPS
+    #   port: 443
+    #   hostname: minio.gw.k8s.sh.aban.io
+    #   allowedRoutes:
+    #     namespaces:
+    #       from: All
+    #   tls:
+    #     certificateRefs:
+    #     - group: ""
+    #       kind: Secret
+    #       name: minio-tls-secret
+    #       namespace: gateway-resources
+    #     mode: Terminate
+    # - name: https-obs-minio
+    #   protocol: HTTPS
+    #   port: 443
+    #   hostname: obs.gw.k8s.sh.aban.io
+    #   allowedRoutes:
+    #     namespaces:
+    #       from: All
+    #   tls:
+    #     certificateRefs:
+    #     - group: ""
+    #       kind: Secret
+    #       name: minio-obs-tls-secret
+    #       namespace: gateway-resources
+    #     mode: Terminate
+    - name: https-grafana
+      protocol: HTTPS
+      port: 443
+      hostname: grafana.gw.k8s.sh.aban.io
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        certificateRefs:
+        - group: ""
+          kind: Secret
+          name: grafana-tls-secret
+          namespace: gateway-resources
+        mode: Terminate
+    - name: https-openobserve
+      protocol: HTTPS
+      port: 443
+      hostname: openobserve.gw.k8s.sh.aban.io
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        certificateRefs:
+        - group: ""
+          kind: Secret
+          name: openobserve-tls-secret
+          namespace: gateway-resources
+        mode: Terminate

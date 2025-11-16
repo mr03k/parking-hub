@@ -1,0 +1,50 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: pg-backend
+  namespace: uat
+spec:
+  instances: 1
+  imageName: ghcr.io/cloudnative-pg/postgis:16
+  backup:
+    barmanObjectStore:
+      destinationPath: s3://db-backups
+      endpointURL: https://z10.s3.cloud.ir
+      s3Credentials:
+        accessKeyId:
+          key: S3_ACCESS_KEY
+          name: s3-backup-secret
+        secretAccessKey:
+          key: S3_SECRET_KEY
+          name: s3-backup-secret
+    retentionPolicy: "10d"
+        
+  storage:
+    size: 20Gi
+  managed:
+    services:
+      additional:
+      - selectorType: rw
+        updateStrategy: replace
+        serviceTemplate:
+          metadata:
+            name: "pg-backend-nodeport"
+          spec:
+            type: NodePort
+            
+    roles:
+    - name: aban
+      ensure: present
+      comment: aban
+      login: true
+      superuser: true
+      inRoles:
+      - pg_monitor
+      - pg_signal_backend
+  bootstrap:
+    initdb:
+      database: farin # Name of the initial database
+      owner: aban # Owner of the database
+      secret:
+        name: postgres-farin-secret # Secret containing password
+  

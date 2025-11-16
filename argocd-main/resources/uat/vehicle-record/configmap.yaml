@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: farin-vehicle-record
+  namespace: uat
+data:
+  env: |
+    ENVIRONMENT=production
+    DATABASE_HOST=postgresql://aban:AbanXXVehicleRecord33ZZ12X@pg-vehicle-record-second-rw:5432/vehicle_records?sslmode=disable
+    HTTP_PORT=80
+    SECRET=secret123
+
+    RABBITMQ_HOST=amqps://default_user_bkVtZ-pUWMLqTFliGYJ:ae0FWgOoLiEmBZBW5MGQa2lMBauLKQpX@amqp.gw.k8s.sh.aban.io:5672/
+    RABBITMQ_EVENT_EXCHANGE=farin_geodata
+    RABBITMQ_INTERNAL_EXCHANGE=atoor_data
+    RABBITMQ_RECORDS_QUEUE=vehicle-records
+    RABBITMQ_RETRY_QUEUE=retry-vehicle-records
+
+
+    TEHRAN_TOKEN=OXhiODQ4MXQ0RHA0VzZKdGRxdW5mSkM1UnFhZjhRd1NEYm9nWXBTeWdMWS5hcGlnYXRld2F5LnRlaHJhbi5pcjpMbURYNDVyOTkwMFh5Y0RlR1dQYmdlS21GLTRMUXVFMHViZ25JLWdsOXlN
+    TEHRAN_LOGIN_URL=https://srv167-apigateway.tehran.ir/ApiContainer.sso.RCL1/connect/token
+    TEHRAN_STORE_RECORD_URL=https://srv167-apigateway.tehran.ir/ApiContainer.MarginParking.Back.RCL1/api/v1/MarginParking/Plate/Detection
+
+
+    MINIO_HOST=z10.s3.cloud.ir
+    MINIO_ACCESS_TOKEN=72daccda5c064281b1aea5ec6417270a
+    MINIO_SECRET=428b493d2409421bbdb8b09f999caa25
+    MINIO_VEHICLE_RECORDS_BUCKET=vehicle-records
+
+    OPEN_TELEMETRY_METRIC_EXPORTER=opentelemtry-collector-collector.uat:4317
+    OPEN_TELEMETRY_LOG_EXPORTER=opentelemtry-collector-collector.uat:4317

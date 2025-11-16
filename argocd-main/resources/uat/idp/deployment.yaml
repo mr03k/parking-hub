@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: identity-provider
+  namespace: idp-uat
+  annotations:
+    config.io/apply: "5"
+spec:
+  selector:
+    matchLabels:
+      app: identity-provider
+  template:
+    metadata:
+      labels:
+        app: identity-provider
+    spec:
+      containers:
+      - name: identity-provider
+        image: docker.aban.io/lenz/idp:main-a630e4b29f669b9de3a01a291f6bdc8e8234d2db
+        envFrom:
+        - configMapRef:
+            name: identity-provider
+        livenessProbe:
+          httpGet:
+            path: /healthz/liveness
+            port: http
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /healthz/readiness
+            port: http
+        resources:
+          requests:
+            memory: "8Mi"
+            cpu: "100m"
+          limits:
+            memory: "16Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP

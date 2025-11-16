@@ -1,0 +1,3220 @@
+definitions:
+  farin_app_api_response.Response-farin_domain_dto_CalenderListResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.CalenderListResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_CalenderResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.CalenderResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_ContractListResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.ContractListResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_ContractResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.ContractResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_ContractorListResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.ContractorListResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_ContractorResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.ContractorResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_DeviceListResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.DeviceListResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_DeviceResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.DeviceResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_DriverAssignmentListResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.DriverAssignmentListResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_DriverAssignmentResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.DriverAssignmentResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_DriverListResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.DriverListResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_DriverLoginResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.DriverLoginResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_DriverResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.DriverResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_LoginResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.LoginResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_RingListResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.RingListResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_RingResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.RingResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_RoleListResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.RoleListResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_RoleResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.RoleResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_UserListResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.UserListResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_UserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.UserResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_VehicleListResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.VehicleListResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-farin_domain_dto_VehicleResponse:
+    properties:
+      data:
+        $ref: '#/definitions/farin_domain_dto.VehicleResponse'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_app_api_response.Response-swagger_EmptyObject:
+    properties:
+      data:
+        $ref: '#/definitions/swagger.EmptyObject'
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  farin_domain_dto.AccessTokenReq:
+    properties:
+      accessToken:
+        type: string
+    required:
+    - accessToken
+    type: object
+  farin_domain_dto.CalenderListResponse:
+    properties:
+      calenders:
+        items:
+          $ref: '#/definitions/farin_domain_dto.CalenderResponse'
+        type: array
+      total:
+        type: integer
+    type: object
+  farin_domain_dto.CalenderRequest:
+    properties:
+      contractId:
+        type: string
+      description:
+        type: string
+      isHoliday:
+        type: boolean
+      shamsiDate:
+        maxLength: 10
+        minLength: 1
+        type: string
+      weekday:
+        enum:
+        - Saturday
+        - Sunday
+        - Monday
+        - Tuesday
+        - Wednesday
+        - Thursday
+        - Friday
+        type: string
+      workDate:
+        type: integer
+      workShift:
+        enum:
+        - Morning
+        - Afternoon
+        - Both
+        type: string
+      workShiftEnd:
+        type: integer
+      workShiftStart:
+        type: integer
+      year:
+        type: integer
+    required:
+    - contractId
+    - isHoliday
+    - shamsiDate
+    - weekday
+    - workDate
+    - workShift
+    - workShiftEnd
+    - workShiftStart
+    - year
+    type: object
+  farin_domain_dto.CalenderResponse:
+    properties:
+      contractId:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      id:
+        type: string
+      isHoliday:
+        type: boolean
+      shamsiDate:
+        type: string
+      updatedAt:
+        type: integer
+      weekday:
+        type: string
+      workDate:
+        type: integer
+      workShift:
+        type: string
+      workShiftEnd:
+        type: integer
+      workShiftStart:
+        type: integer
+      year:
+        type: integer
+    type: object
+  farin_domain_dto.ContractListResponse:
+    properties:
+      contracts:
+        items:
+          $ref: '#/definitions/farin_domain_dto.ContractResponse'
+        type: array
+      total:
+        type: integer
+    type: object
+  farin_domain_dto.ContractRequest:
+    properties:
+      contractAmount:
+        minimum: 1
+        type: integer
+      contractDate:
+        type: string
+      contractNumber:
+        maxLength: 50
+        minLength: 1
+        type: string
+      contractType:
+        maxLength: 50
+        minLength: 1
+        type: string
+      contractorId:
+        type: string
+      description:
+        type: string
+      endDate:
+        type: string
+      equipmentPeriod:
+        minimum: 1
+        type: integer
+      operationPeriod:
+        minimum: 1
+        type: integer
+      startDate:
+        type: string
+    required:
+    - contractAmount
+    - contractDate
+    - contractNumber
+    - contractType
+    - contractorId
+    - endDate
+    - equipmentPeriod
+    - operationPeriod
+    - startDate
+    type: object
+  farin_domain_dto.ContractResponse:
+    properties:
+      contractAmount:
+        type: integer
+      contractDate:
+        type: string
+      contractNumber:
+        type: string
+      contractType:
+        type: string
+      contractorId:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      endDate:
+        type: string
+      equipmentPeriod:
+        type: integer
+      id:
+        type: string
+      operationPeriod:
+        type: integer
+      startDate:
+        type: string
+      updatedAt:
+        type: integer
+    type: object
+  farin_domain_dto.ContractorListResponse:
+    properties:
+      contractors:
+        items:
+          $ref: '#/definitions/farin_domain_dto.ContractorResponse'
+        type: array
+      total:
+        type: integer
+    type: object
+  farin_domain_dto.ContractorRequest:
+    properties:
+      address:
+        type: string
+      ceoName:
+        type: string
+      codeContractor:
+        maxLength: 10
+        minLength: 3
+        type: string
+      contractorName:
+        maxLength: 100
+        minLength: 3
+        type: string
+      description:
+        type: string
+      email:
+        type: string
+      numberAccountBank:
+        type: string
+      numberRegistration:
+        type: string
+      personContact:
+        type: string
+      phoneNumber:
+        maxLength: 15
+        minLength: 10
+        type: string
+      signatoriesAuthorized:
+        type: string
+      typeContract:
+        type: string
+    required:
+    - codeContractor
+    - contractorName
+    type: object
+  farin_domain_dto.ContractorResponse:
+    properties:
+      address:
+        type: string
+      ceoName:
+        type: string
+      codeContractor:
+        type: string
+      contractorName:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      email:
+        type: string
+      id:
+        type: string
+      numberAccountBank:
+        type: string
+      numberRegistration:
+        type: string
+      personContact:
+        type: string
+      phoneNumber:
+        type: string
+      signatoriesAuthorized:
+        type: string
+      typeContract:
+        type: string
+      updatedAt:
+        type: integer
+    type: object
+  farin_domain_dto.DeviceListResponse:
+    properties:
+      devices:
+        items:
+          $ref: '#/definitions/farin_domain_dto.DeviceResponse'
+        type: array
+      total:
+        type: integer
+    type: object
+  farin_domain_dto.DeviceRequest:
+    properties:
+      classDevice:
+        type: string
+      codeDevice:
+        maxLength: 120
+        minLength: 1
+        type: string
+      contractorId:
+        type: string
+      dateExpiryInsurance:
+        type: integer
+      dateExpiryWarranty:
+        type: integer
+      dateInstallation:
+        type: integer
+      description:
+        type: string
+      deviceID:
+        maximum: 120
+        minimum: 1
+        type: integer
+      imageContract:
+        items:
+          type: integer
+        type: array
+      imageInsurance:
+        items:
+          type: integer
+        type: array
+      model:
+        type: string
+      numberSerial:
+        maxLength: 50
+        minLength: 1
+        type: string
+      vehicleId:
+        type: string
+    required:
+    - codeDevice
+    - contractorId
+    - deviceID
+    - numberSerial
+    - vehicleId
+    type: object
+  farin_domain_dto.DeviceResponse:
+    properties:
+      classDevice:
+        type: string
+      codeDevice:
+        type: string
+      contractorId:
+        type: string
+      createdAt:
+        type: integer
+      dateExpiryInsurance:
+        type: integer
+      dateExpiryWarranty:
+        type: integer
+      dateInstallation:
+        type: integer
+      description:
+        type: string
+      deviceID:
+        type: integer
+      id:
+        type: string
+      imageContract:
+        type: string
+      imageInsurance:
+        type: string
+      model:
+        type: string
+      numberSerial:
+        type: string
+      updatedAt:
+        type: integer
+      vehicleId:
+        type: string
+    type: object
+  farin_domain_dto.DriverAssignmentListResponse:
+    properties:
+      driverAssignments:
+        items:
+          $ref: '#/definitions/farin_domain_dto.DriverAssignmentResponse'
+        type: array
+      total:
+        type: integer
+    type: object
+  farin_domain_dto.DriverAssignmentRequest:
+    properties:
+      calenderID:
+        type: string
+      codeVehicle:
+        type: string
+      driverId:
+        type: string
+      ringId:
+        type: integer
+    required:
+    - calenderID
+    - codeVehicle
+    - driverId
+    - ringId
+    type: object
+  farin_domain_dto.DriverAssignmentResponse:
+    properties:
+      calendarId:
+        type: string
+      codeVehicle:
+        type: string
+      createdAt:
+        type: integer
+      driverId:
+        type: string
+      id:
+        type: string
+      ringId:
+        type: integer
+      updatedAt:
+        type: integer
+    type: object
+  farin_domain_dto.DriverListResponse:
+    properties:
+      drivers:
+        items:
+          $ref: '#/definitions/farin_domain_dto.DriverResponse'
+        type: array
+      total:
+        type: integer
+    type: object
+  farin_domain_dto.DriverLoginRequest:
+    properties:
+      password:
+        type: string
+      phoneNumber:
+        type: string
+      remember:
+        type: boolean
+      vehicleID:
+        type: string
+    required:
+    - password
+    - phoneNumber
+    - vehicleID
+    type: object
+  farin_domain_dto.DriverLoginResponse:
+    properties:
+      accessToken:
+        type: string
+      calender:
+        $ref: '#/definitions/farin_domain_dto.CalenderResponse'
+      contract:
+        $ref: '#/definitions/farin_domain_dto.ContractResponse'
+      contractor:
+        $ref: '#/definitions/farin_domain_dto.ContractorResponse'
+      device:
+        items:
+          $ref: '#/definitions/farin_domain_dto.DeviceResponse'
+        type: array
+      driver:
+        $ref: '#/definitions/farin_domain_dto.DriverResponse'
+      expAccessToken:
+        type: string
+      expRefreshToken:
+        type: string
+      refreshToken:
+        type: string
+      ring:
+        $ref: '#/definitions/farin_domain_dto.RingResponse'
+      user:
+        $ref: '#/definitions/farin_domain_dto.UserResponse'
+      vehicle:
+        $ref: '#/definitions/farin_domain_dto.VehicleResponse'
+    type: object
+  farin_domain_dto.DriverRequest:
+    properties:
+      birthCertificateImage:
+        items:
+          type: integer
+        type: array
+      contractorId:
+        type: string
+      criminalRecordImage:
+        items:
+          type: integer
+        type: array
+      description:
+        type: string
+      driverPhoto:
+        items:
+          type: integer
+        type: array
+      driverType:
+        enum:
+        - original
+        - reserve
+        type: string
+      employmentEndDate:
+        type: integer
+      employmentStartDate:
+        type: integer
+      employmentStatus:
+        type: string
+      healthCertificateImage:
+        items:
+          type: integer
+        type: array
+      idcardImage:
+        items:
+          type: integer
+        type: array
+      militaryServiceCardImage:
+        items:
+          type: integer
+        type: array
+      shiftType:
+        enum:
+        - morning
+        - afternoon
+        - both
+        type: string
+      userId:
+        type: string
+    required:
+    - contractorId
+    - driverType
+    - employmentStartDate
+    - employmentStatus
+    - shiftType
+    - userId
+    type: object
+  farin_domain_dto.DriverResponse:
+    properties:
+      contractorId:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      driverType:
+        type: string
+      employmentEndDate:
+        type: integer
+      employmentStartDate:
+        type: integer
+      employmentStatus:
+        type: string
+      id:
+        type: string
+      shiftType:
+        type: string
+      updatedAt:
+        type: integer
+      userId:
+        type: string
+    type: object
+  farin_domain_dto.LoginRequest:
+    properties:
+      password:
+        type: string
+      phoneNumber:
+        type: string
+      remember:
+        type: boolean
+    required:
+    - password
+    - phoneNumber
+    type: object
+  farin_domain_dto.LoginResponse:
+    properties:
+      accessToken:
+        type: string
+      expAccessToken:
+        type: string
+      expRefreshToken:
+        type: string
+      refreshToken:
+        type: string
+      user:
+        $ref: '#/definitions/farin_domain_dto.UserResponse'
+    type: object
+  farin_domain_dto.PasswordRequest:
+    properties:
+      password:
+        minLength: 8
+        type: string
+      repeatPassword:
+        type: string
+    required:
+    - password
+    - repeatPassword
+    type: object
+  farin_domain_dto.RefreshTokenRequest:
+    properties:
+      refreshToken:
+        type: string
+    required:
+    - refreshToken
+    type: object
+  farin_domain_dto.RingListResponse:
+    properties:
+      rings:
+        items:
+          $ref: '#/definitions/farin_domain_dto.RingResponse'
+        type: array
+      total:
+        type: integer
+    type: object
+  farin_domain_dto.RingRequest:
+    properties:
+      geom:
+        description: Assuming geometry is stored as a string (e.g., WKT format)
+        type: string
+      id:
+        type: integer
+      length:
+        minimum: 0
+        type: number
+      ringCode:
+        maxLength: 100
+        minLength: 1
+        type: string
+      ringName:
+        maxLength: 120
+        minLength: 1
+        type: string
+    required:
+    - geom
+    - id
+    - length
+    - ringCode
+    - ringName
+    type: object
+  farin_domain_dto.RingResponse:
+    properties:
+      createdAt:
+        type: integer
+      geom:
+        type: string
+      id:
+        type: integer
+      length:
+        type: number
+      ringCode:
+        type: string
+      ringName:
+        type: string
+      updatedAt:
+        type: integer
+    type: object
+  farin_domain_dto.RoleListResponse:
+    properties:
+      roles:
+        items:
+          $ref: '#/definitions/farin_domain_dto.RoleResponse'
+        type: array
+      total:
+        type: integer
+    type: object
+  farin_domain_dto.RoleRequest:
+    properties:
+      title:
+        maxLength: 100
+        minLength: 1
+        type: string
+    required:
+    - title
+    type: object
+  farin_domain_dto.RoleResponse:
+    properties:
+      createdAt:
+        type: integer
+      id:
+        type: string
+      title:
+        type: string
+      updatedAt:
+        type: integer
+    type: object
+  farin_domain_dto.UserListResponse:
+    properties:
+      total:
+        type: integer
+      users:
+        items:
+          $ref: '#/definitions/farin_domain_dto.UserResponse'
+        type: array
+    type: object
+  farin_domain_dto.UserRequest:
+    properties:
+      address:
+        type: string
+      companyName:
+        type: string
+      email:
+        type: string
+      firstName:
+        type: string
+      gender:
+        type: string
+      lastName:
+        type: string
+      nationalId:
+        type: string
+      password:
+        maxLength: 32
+        minLength: 8
+        type: string
+      phoneNumber:
+        type: string
+      postalCode:
+        type: string
+      profileImage:
+        items:
+          type: integer
+        type: array
+      roleID:
+        type: string
+      status:
+        type: string
+      username:
+        maxLength: 50
+        minLength: 3
+        type: string
+    required:
+    - email
+    - firstName
+    - lastName
+    - nationalId
+    - password
+    - phoneNumber
+    - username
+    type: object
+  farin_domain_dto.UserResponse:
+    properties:
+      address:
+        type: string
+      companyName:
+        type: string
+      createdAt:
+        type: integer
+      email:
+        type: string
+      firstName:
+        type: string
+      gender:
+        type: string
+      id:
+        type: string
+      lastName:
+        type: string
+      nationalId:
+        type: string
+      phoneNumber:
+        type: string
+      postalCode:
+        type: string
+      profileImage:
+        type: string
+      role:
+        $ref: '#/definitions/farin_domain_entity.Role'
+      roleID:
+        type: string
+      status:
+        type: string
+      updatedAt:
+        type: integer
+      username:
+        type: string
+    required:
+    - role
+    type: object
+  farin_domain_dto.VehicleListResponse:
+    properties:
+      total:
+        type: integer
+      vehicles:
+        items:
+          $ref: '#/definitions/farin_domain_dto.VehicleResponse'
+        type: array
+    type: object
+  farin_domain_dto.VehicleRequest:
+    properties:
+      bodyInsuranceImage:
+        items:
+          type: integer
+        type: array
+      brand:
+        type: string
+      codeVehicle:
+        type: string
+      color:
+        type: string
+      contractorId:
+        type: string
+      description:
+        type: string
+      expiryInsuranceBody:
+        type: integer
+      expiryInsurancePartyThird:
+        type: integer
+      imageCardVehicle:
+        items:
+          type: integer
+        type: array
+      imageDocumentVehicle:
+        items:
+          type: integer
+        type: array
+      kilometersInitial:
+        type: integer
+      manufactureOfYear:
+        type: integer
+      model:
+        type: string
+      plateLicense:
+        maxLength: 115
+        minLength: 1
+        type: string
+      status:
+        type: string
+      thirdPartyInsuranceImage:
+        items:
+          type: integer
+        type: array
+      typeVehicle:
+        type: string
+      vehicleID:
+        maximum: 120
+        minimum: 1
+        type: integer
+      vin:
+        maxLength: 120
+        minLength: 1
+        type: string
+    required:
+    - codeVehicle
+    - contractorId
+    - plateLicense
+    - vehicleID
+    - vin
+    type: object
+  farin_domain_dto.VehicleResponse:
+    properties:
+      brand:
+        type: string
+      codeVehicle:
+        type: string
+      color:
+        type: string
+      contractorId:
+        type: string
+      createdAt:
+        type: integer
+      description:
+        type: string
+      expiryInsuranceBody:
+        type: integer
+      expiryInsurancePartyThird:
+        type: integer
+      id:
+        type: string
+      kilometersInitial:
+        type: integer
+      manufactureOfYear:
+        type: integer
+      model:
+        type: string
+      plateLicense:
+        type: string
+      status:
+        type: string
+      typeVehicle:
+        type: string
+      updatedAt:
+        type: integer
+      vehicleID:
+        type: integer
+      vin:
+        type: string
+    type: object
+  farin_domain_entity.Role:
+    properties:
+      createdAt:
+        type: integer
+      id:
+        type: string
+      title:
+        type: string
+      updatedAt:
+        type: integer
+    type: object
+  swagger.EmptyObject:
+    type: object
+info:
+  contact: {}
+paths:
+  /auth/access-token-verify:
+    post:
+      consumes:
+      - application/json
+      description: jwt access token verify
+      parameters:
+      - description: request body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.AccessTokenReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_LoginResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      summary: access token verify
+      tags:
+      - auth
+  /auth/driver-login/:
+    post:
+      consumes:
+      - application/json
+      description: jwt driver-login
+      parameters:
+      - description: request body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.DriverLoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DriverLoginResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "422":
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      summary: driver-login
+      tags:
+      - auth
+  /auth/login/:
+    post:
+      consumes:
+      - application/json
+      description: jwt login
+      parameters:
+      - description: request body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_LoginResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "422":
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      summary: login
+      tags:
+      - auth
+  /auth/password/:
+    put:
+      consumes:
+      - application/json
+      description: set password
+      parameters:
+      - description: request body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.PasswordRequest'
+      - description: bearer authentication
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Contract Data
+        in: body
+        name: contract
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.ContractRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      summary: set password
+      tags:
+      - user
+      - auth
+  /auth/renew-access-token:
+    post:
+      consumes:
+      - application/json
+      description: jwt renew access token
+      parameters:
+      - description: request body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.RefreshTokenRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_LoginResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      summary: renew acces token
+      tags:
+      - auth
+  /calenders:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of calenders with optional filters and pagination
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: created_at
+        description: Field to sort by
+        in: query
+        name: sortField
+        type: string
+      - default: asc
+        description: Sort order (asc/desc)
+        in: query
+        name: sortOrder
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Page size
+        in: query
+        name: pageSize
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_CalenderListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: List calenders
+      tags:
+      - calenders
+    post:
+      consumes:
+      - application/json
+      description: Create a new calender by providing calender details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Calender Data
+        in: body
+        name: calender
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.CalenderRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_CalenderResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Create a new calender
+      tags:
+      - calenders
+  /calenders/{id}:
+    delete:
+      description: Delete a calender by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Calender ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a calender
+      tags:
+      - calenders
+    get:
+      description: Retrieve calender details by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Calender ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_CalenderResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Get calender details
+      tags:
+      - calenders
+    put:
+      consumes:
+      - application/json
+      description: Update an existing calender's details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Updated Calender Data
+        in: body
+        name: calender
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.CalenderRequest'
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_CalenderResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Update calender details
+      tags:
+      - calenders
+  /contractors:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of contractors with optional filters and pagination
+      parameters:
+      - default: created_at
+        description: Field to sort by
+        in: query
+        name: sortField
+        type: string
+      - default: asc
+        description: Sort order (asc/desc)
+        in: query
+        name: sortOrder
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Page size
+        in: query
+        name: pageSize
+        type: integer
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_ContractorListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: List contractors
+      tags:
+      - contractors
+    post:
+      consumes:
+      - application/json
+      description: Create a new contractor by providing contractor details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Contractor Data
+        in: body
+        name: contractor
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.ContractorRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_ContractorResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Create a new contractor
+      tags:
+      - contractors
+  /contractors/{id}:
+    delete:
+      description: Delete a contractor by ID
+      parameters:
+      - description: Contractor ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a contractor
+      tags:
+      - contractors
+    get:
+      description: Retrieve contractor details by ID
+      parameters:
+      - description: Contractor ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_ContractorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Get contractor details
+      tags:
+      - contractors
+    put:
+      consumes:
+      - application/json
+      description: Update an existing contractor's details
+      parameters:
+      - description: Updated Contractor Data
+        in: body
+        name: contractor
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.ContractorRequest'
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_ContractorResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Update contractor details
+      tags:
+      - contractors
+  /contracts:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of contracts with optional filters and pagination
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: created_at
+        description: Field to sort by
+        in: query
+        name: sortField
+        type: string
+      - default: asc
+        description: Sort order (asc/desc)
+        in: query
+        name: sortOrder
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Page size
+        in: query
+        name: pageSize
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_ContractListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: List contracts
+      tags:
+      - contracts
+    post:
+      consumes:
+      - application/json
+      description: Create a new contract by providing contract details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Contract Data
+        in: body
+        name: contract
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.ContractRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_ContractResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Create a new contract
+      tags:
+      - contracts
+  /contracts/{id}:
+    delete:
+      description: Delete a contract by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Contract ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a contract
+      tags:
+      - contracts
+    get:
+      description: Retrieve contract details by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Contract ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_ContractResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Get contract details
+      tags:
+      - contracts
+    put:
+      consumes:
+      - application/json
+      description: Update an existing contract's details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Updated Contract Data
+        in: body
+        name: contract
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.ContractRequest'
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_ContractResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Update contract details
+      tags:
+      - contracts
+  /devices:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of devices with optional filters and pagination
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: created_at
+        description: Field to sort by
+        in: query
+        name: sortField
+        type: string
+      - default: asc
+        description: Sort order (asc/desc)
+        in: query
+        name: sortOrder
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Page size
+        in: query
+        name: pageSize
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DeviceListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: List devices
+      tags:
+      - devices
+    post:
+      consumes:
+      - application/json
+      description: Create a new device by providing device details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Device Data
+        in: body
+        name: device
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.DeviceRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DeviceResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Create a new device
+      tags:
+      - devices
+  /devices/{id}:
+    delete:
+      description: Delete a device by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Device ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a device
+      tags:
+      - devices
+    get:
+      description: Retrieve device details by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Device ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DeviceResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Get device details
+      tags:
+      - devices
+    put:
+      consumes:
+      - application/json
+      description: Update an existing device's details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Updated Device Data
+        in: body
+        name: device
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.DeviceRequest'
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DeviceResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Update device details
+      tags:
+      - devices
+  /driver-assignments:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of driverAssignments with optional filters and
+        pagination
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: created_at
+        description: Field to sort by
+        in: query
+        name: sortField
+        type: string
+      - default: asc
+        description: Sort order (asc/desc)
+        in: query
+        name: sortOrder
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Page size
+        in: query
+        name: pageSize
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DriverAssignmentListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: List driverAssignments
+      tags:
+      - driverAssignments
+    post:
+      consumes:
+      - application/json
+      description: Create a new driverAssignment by providing driverAssignment details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: DriverAssignment Data
+        in: body
+        name: driverAssignment
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.DriverAssignmentRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DriverAssignmentResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Create a new driverAssignment
+      tags:
+      - driverAssignments
+  /driver-assignments/{id}:
+    delete:
+      description: Delete a driverAssignment by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: DriverAssignment ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a driverAssignment
+      tags:
+      - driverAssignments
+    get:
+      description: Retrieve driverAssignment details by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: DriverAssignment ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DriverAssignmentResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Get driverAssignment details
+      tags:
+      - driverAssignments
+    put:
+      consumes:
+      - application/json
+      description: Update an existing driverAssignment's details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Updated DriverAssignment Data
+        in: body
+        name: driverAssignment
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.DriverAssignmentRequest'
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DriverAssignmentResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Update driverAssignment details
+      tags:
+      - driverAssignments
+  /drivers:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of drivers with optional filters and pagination
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: created_at
+        description: Field to sort by
+        in: query
+        name: sortField
+        type: string
+      - default: asc
+        description: Sort order (asc/desc)
+        in: query
+        name: sortOrder
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Page size
+        in: query
+        name: pageSize
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DriverListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: List drivers
+      tags:
+      - drivers
+    post:
+      consumes:
+      - application/json
+      description: Create a new driver by providing driver details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Driver Data
+        in: body
+        name: driver
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.DriverRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DriverResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Create a new driver
+      tags:
+      - drivers
+  /drivers/{id}:
+    delete:
+      description: Delete a driver by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a driver
+      tags:
+      - drivers
+    get:
+      description: Retrieve driver details by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Driver ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DriverResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Get driver details
+      tags:
+      - drivers
+    put:
+      consumes:
+      - application/json
+      description: Update an existing driver's details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Updated Driver Data
+        in: body
+        name: driver
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.DriverRequest'
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_DriverResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Update driver details
+      tags:
+      - drivers
+  /rings:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of rings with optional filters and pagination
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: created_at
+        description: Field to sort by
+        in: query
+        name: sortField
+        type: string
+      - default: asc
+        description: Sort order (asc/desc)
+        in: query
+        name: sortOrder
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Page size
+        in: query
+        name: pageSize
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_RingListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: List rings
+      tags:
+      - rings
+    post:
+      consumes:
+      - application/json
+      description: Create a new ring by providing ring details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Ring Data
+        in: body
+        name: ring
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.RingRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_RingResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Create a new ring
+      tags:
+      - rings
+  /rings/{id}:
+    delete:
+      description: Delete a ring by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Ring ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a ring
+      tags:
+      - rings
+    get:
+      description: Retrieve ring details by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Ring ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_RingResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Get ring details
+      tags:
+      - rings
+    put:
+      consumes:
+      - application/json
+      description: Update an existing ring's details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Updated Ring Data
+        in: body
+        name: ring
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.RingRequest'
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_RingResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Update ring details
+      tags:
+      - rings
+  /roles:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of roles with optional filters and pagination
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: created_at
+        description: Field to sort by
+        in: query
+        name: sortField
+        type: string
+      - default: asc
+        description: Sort order (asc/desc)
+        in: query
+        name: sortOrder
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Page size
+        in: query
+        name: pageSize
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_RoleListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: List roles
+      tags:
+      - roles
+    post:
+      consumes:
+      - application/json
+      description: Create a new role by providing role details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Role Data
+        in: body
+        name: role
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.RoleRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_RoleResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Create a new role
+      tags:
+      - roles
+  /roles/{id}:
+    delete:
+      description: Delete a role by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Role ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a role
+      tags:
+      - roles
+    get:
+      description: Retrieve role details by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Role ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_RoleResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Get role details
+      tags:
+      - roles
+    put:
+      consumes:
+      - application/json
+      description: Update an existing role's details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Updated Role Data
+        in: body
+        name: role
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.RoleRequest'
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_RoleResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Update role details
+      tags:
+      - roles
+  /users:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of users with optional filters and pagination
+      parameters:
+      - default: created_at
+        description: Field to sort by
+        in: query
+        name: sortField
+        type: string
+      - default: asc
+        description: Sort order (asc/desc)
+        in: query
+        name: sortOrder
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Page size
+        in: query
+        name: pageSize
+        type: integer
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_UserListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: List users
+      tags:
+      - users
+    post:
+      consumes:
+      - application/json
+      description: Create a new user by providing user details
+      parameters:
+      - description: User Data
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.UserRequest'
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_UserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - BearerAuth: []
+      - ApiKeyAuth: []
+      summary: Create a new user
+      tags:
+      - users
+  /users/{id}:
+    delete:
+      description: Delete a user by ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a user
+      tags:
+      - users
+    get:
+      description: Retrieve user details by ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_UserResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Get user details
+      tags:
+      - users
+    put:
+      consumes:
+      - application/json
+      description: Update an existing user's details
+      parameters:
+      - description: Updated User Data
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.UserRequest'
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_UserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Update user details
+      tags:
+      - users
+  /users/{id}/picture:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Upload a profile picture for a user
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Profile Picture
+        in: formData
+        name: picture
+        required: true
+        type: file
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Upload user picture
+      tags:
+      - users
+  /vehicles:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of vehicles with optional filters and pagination
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: created_at
+        description: Field to sort by
+        in: query
+        name: sortField
+        type: string
+      - default: asc
+        description: Sort order (asc/desc)
+        in: query
+        name: sortOrder
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Page size
+        in: query
+        name: pageSize
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_VehicleListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: List vehicles
+      tags:
+      - vehicles
+    post:
+      consumes:
+      - application/json
+      description: Create a new vehicle by providing vehicle details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Vehicle Data
+        in: body
+        name: vehicle
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.VehicleRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_VehicleResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Create a new vehicle
+      tags:
+      - vehicles
+  /vehicles/{id}:
+    delete:
+      description: Delete a vehicle by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Vehicle ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a vehicle
+      tags:
+      - vehicles
+    get:
+      description: Retrieve vehicle details by ID
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Vehicle ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_VehicleResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Get vehicle details
+      tags:
+      - vehicles
+    put:
+      consumes:
+      - application/json
+      description: Update an existing vehicle's details
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Updated Vehicle Data
+        in: body
+        name: vehicle
+        required: true
+        schema:
+          $ref: '#/definitions/farin_domain_dto.VehicleRequest'
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-farin_domain_dto_VehicleResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/farin_app_api_response.Response-swagger_EmptyObject'
+      security:
+      - ApiKeyAuth: []
+      summary: Update vehicle details
+      tags:
+      - vehicles
+swagger: "2.0"

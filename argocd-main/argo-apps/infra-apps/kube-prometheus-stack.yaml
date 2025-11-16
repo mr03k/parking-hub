@@ -1,0 +1,47 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-prometheus-stack
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: kube-prometheus-stack
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: kube-prometheus-stack
+    repoURL:  https://prometheus-community.github.io/helm-charts
+    targetRevision: 68.4.4
+    helm:
+      valuesObject:
+        grafana:
+          adminPassword: 2nuz5AzhvXs47tD7
+          persistence:
+            enabled: true
+            size: 10Gi
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+  
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: monitoring-resources
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://git.abanppc.com/farin-project/infra/argocd.git
+    targetRevision: HEAD
+    path: resources/infra/monitoring
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

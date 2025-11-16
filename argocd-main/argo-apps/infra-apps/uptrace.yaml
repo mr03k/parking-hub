@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: uptrace
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: uptrace
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: uptrace
+    repoURL: https://charts.uptrace.dev
+    targetRevision: 1.7.7
+    helm:
+      valuesObject:
+        otelcol:
+          enabled: false
+        ingress:
+          enabled: false
+        uptrace:
+          config:
+            auth:
+              users:
+                - name: mequ
+                  email: mequ@mequ.ir
+                  password: sdfas#df%!fgH&SDFs
+                  notify_by_email: true
+                  auth_token: secret_token
+            metrics:
+              drop_attrs:
+                - test
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true

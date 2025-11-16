@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: haproxy
+  namespace: gateway-resources
+spec:
+  selector:
+    matchLabels:
+      app: haproxy
+  template:
+    metadata:
+      labels:
+        app: haproxy
+    spec:
+      containers:
+        - name: haproxy
+          image: haproxy:3.0.3-alpine
+          ports:
+            - containerPort: 8080
+              hostPort: 80
+            - containerPort: 8443
+              hostPort: 443
+            - containerPort: 15672
+              hostPort: 5672
+            - containerPort: 5673
+              hostPort: 5673
+            - containerPort: 5432
+              hostPort: 5432
+          resources:
+            requests:
+              memory: "16Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "1000m"
+          volumeMounts:
+            - name: haproxy-config
+              mountPath: /usr/local/etc/haproxy/haproxy.cfg
+              subPath: haproxy.cfg
+      volumes:
+        - name: haproxy-config
+          configMap:
+            name: haproxy-config

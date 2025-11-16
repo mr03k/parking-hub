@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: farin-backend-deployment
+  namespace: uat
+  labels:
+    app: farin-backend
+spec:
+  replicas: 7
+  selector:
+    matchLabels:
+      app: farin-backend
+  template:
+    metadata:
+      labels:
+        app: farin-backend
+    spec:
+      containers:
+      - name: farin-backend
+        image: docker.aban.io/farin/farin:main-03695b5d0ee6f5fee7d47004d4ff9d6dd4b5a2ab
+        resources:
+          requests:
+            memory: "20Mi"
+            cpu: "10m"
+          limits:
+            memory: "3300Mi"
+            cpu: "2000m"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: config-env
+          subPath: env
+          mountPath: /app/.env
+        livenessProbe:
+          httpGet:
+            path: /liveness
+            port: 80
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /readiness
+            port: 80
+          timeoutSeconds: 30
+          initialDelaySeconds: 10
+          periodSeconds: 70
+
+      initContainers:
+      - name: migrate
+        image: docker.aban.io/farin/migrate/farin:main-ea43e8cd1db253d2284419b10372799a69a4d4b2
+        command: [ "/bin/sh", "-c", "/usr/bin/migrate -path /app/migrations -database \"$(cat /app/.env | grep '^DATABASE_HOST=' | awk -F'=' '{print substr($0, index($0, $2))}')\" -verbose up" ]
+        volumeMounts:
+        - name: config-env
+          subPath: env
+          mountPath: /app/.env
+      - name: init-seed
+        image: docker.aban.io/farin/farin:main-ea43e8cd1db253d2284419b10372799a69a4d4b2
+        command: [ "/app/build", "-seed" ]
+        volumeMounts:
+        - name: config-env
+          subPath: env
+          mountPath: /app/.env
+      volumes:
+      - configMap:
+          name: farin-backend
+        name: config-env

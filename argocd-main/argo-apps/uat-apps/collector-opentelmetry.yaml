@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: collector-uptrace-resources
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://git.abanppc.com/farin-project/infra/argocd.git
+    targetRevision: HEAD
+    path: resources/uat/uptrace-collector
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: uat
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+  # ignoreDifferences:
+  #   - group: "opentelemetry.io"
+  #     kind: "OpenTelemetryCollector"
+  #     jsonPointers:
+  #       - /spec/config

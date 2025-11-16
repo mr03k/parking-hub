@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oauth-proxy
+  namespace: dev
+spec:
+  strategy:
+    type: RollingUpdate
+    maxSurge: 1
+    maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: oauth-proxy
+    spec:
+      containers:
+        - image: docker.aban.io/farin/oauth2-proxy:develop-d6a10d4868aaccf86d15d69cf5b87902f65c094a
+          command: [ "./cmd", "-rules=/config/rules.yaml"]
+          volumeMounts:
+            - name: rules-file
+              mountPath: /config/rules.yaml
+              subPath: rules.yaml
+          name: oauth-proxy
+          livenessProbe:
+            timeoutSeconds: 2
+            httpGet:
+              path: /oauth2/healthz/liveness
+              port: 8080
+          readinessProbe:
+            initialDelaySeconds: 10
+            httpGet:
+              path: /oauth2/healthz/readiness
+              port: 8080
+            timeoutSeconds: 2
+            failureThreshold: 1
+            successThreshold: 3
+          resources:
+            limits:
+              memory: "32Mi"
+              cpu: "250m"
+            requests:
+              memory: "16Mi"
+              cpu: "50m"
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: oauth-config
+      volumes:
+        - name: rules-file
+          configMap:
+            name: rules
+  selector:
+    matchLabels:
+      app: oauth-proxy
+  replicas: 1
+
+
+

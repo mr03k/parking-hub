@@ -1,0 +1,23 @@
+
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: uptrace-http-route
+  namespace: uptrace
+spec:
+  parentRefs:
+    - name: default-gateway
+      namespace: gateway-resources
+  hostnames:
+    - uptrace.gw.k8s.sh.aban.io
+  rules:
+    - backendRefs:
+        - group: ""
+          kind: Service
+          name: uptrace
+          port: 14318
+          weight: 1
+      matches:
+        - path:
+            type: PathPrefix
+            value: /

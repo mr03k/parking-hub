@@ -1,0 +1,235 @@
+apiVersion: k0sctl.k0sproject.io/v1beta1
+kind: Cluster
+metadata:
+  name: shardari-k8s-cluster
+spec:
+  # k0s:
+  #   version: v1.30.2+k0s.0
+  #   config:
+  #     spec:
+  #       api:
+  #         sams:
+  #           - 
+  #       network:
+  #         nodeLocalLoadBalancing:
+  #           enabled: true
+  #           type: EnvoyProxy
+  k0s:
+    version: v1.30.2+k0s.0
+    config:
+      apiVersion: k0s.k0sproject.io/v1beta1
+      kind: Cluster
+      metadata:
+        name: k0s
+      spec:
+        api:
+          k0sApiPort: 9443
+          port: 6443
+          sans:
+          - controller.k8s.sh.aban.io
+        installConfig:
+          users:
+            etcdUser: etcd
+            kineUser: kube-apiserver
+            konnectivityUser: konnectivity-server
+            kubeAPIserverUser: kube-apiserver
+            kubeSchedulerUser: kube-scheduler
+        konnectivity:
+          adminPort: 8133
+          agentPort: 8132
+        network:
+          provider: calico
+          nodeLocalLoadBalancing:
+            enabled: true
+            type: EnvoyProxy
+          kubeProxy:
+            disabled: false
+            mode: iptables
+          # kuberouter:
+          #   autoMTU: true
+          #   mtu: 0
+          #   peerRouterASNs: ""
+          #   peerRouterIPs: ""
+          #   ipMasq: false
+          podCIDR: 10.244.0.0/16
+          serviceCIDR: 10.96.0.0/12
+        podSecurityPolicy:
+          defaultPolicy: 00-k0s-privileged
+        storage:
+          type: etcd
+        telemetry:
+          enabled: false
+
+  hosts:
+  # controllers
+  - ssh:
+      address: 193.151.138.252
+      user: root
+      port: 22
+    role: controller
+    uploadBinary: false
+    files:
+    - name: containerd config
+      src: ./resources/etc/k0s/containerd/containerd.toml
+      dstDir: /etc/k0s/
+    - name: containerd registry config
+      src: ./resources/etc/k0s/containerd/containerd
+      dstDir: /etc/k0s/containerd
+  - ssh:
+      address: 193.151.137.250
+      user: root
+      port: 22
+    role: controller
+    uploadBinary: false
+    files:
+    - name: containerd config
+      src: ./resources/etc/k0s/containerd/containerd.toml
+      dstDir: /etc/k0s/
+    - name: containerd registry config
+      src: ./resources/etc/k0s/containerd/containerd
+      dstDir: /etc/k0s/containerd
+  - ssh:
+      address: 193.151.137.247
+      user: root
+      port: 22
+    role: controller
+    uploadBinary: false
+    files:
+    - name: containerd config
+      src: ./resources/etc/k0s/containerd/containerd.toml
+      dstDir: /etc/k0s/
+    - name: containerd registry config
+      src: ./resources/etc/k0s/containerd/containerd
+      dstDir: /etc/k0s/containerd
+  # workers
+  - ssh:
+      address: 193.151.137.243
+      user: root
+      port: 22
+    role: worker
+    uploadBinary: false
+    files:
+    - name: containerd config
+      src: ./resources/etc/k0s/containerd/containerd.toml
+      dstDir: /etc/k0s/
+    - name: containerd registry config
+      src: ./resources/etc/k0s/containerd/containerd
+      dstDir: /etc/k0s/containerd
+  # - ssh:
+  #     address: 193.151.137.240
+  #     user: root
+  #     port: 22
+  #   role: worker
+  #   uploadBinary: false
+  #   files:
+  #   - name: containerd config
+  #     src: ./resources/etc/k0s/containerd/containerd.toml
+  #     dstDir: /etc/k0s/
+  #   - name: containerd registry config
+  #     src: ./resources/etc/k0s/containerd/containerd
+  #     dstDir: /etc/k0s/containerd
+  - ssh:
+      address: 193.151.133.38
+      user: root
+      port: 22
+    role: worker
+    uploadBinary: false
+    files:
+    - name: containerd config
+      src: ./resources/etc/k0s/containerd/containerd.toml
+      dstDir: /etc/k0s/
+    - name: containerd registry config
+      src: ./resources/etc/k0s/containerd/containerd
+      dstDir: /etc/k0s/containerd
+  - ssh:
+      address: 193.151.145.189
+      user: root
+      port: 22
+    role: worker
+    uploadBinary: false
+    files:
+    - name: containerd config
+      src: ./resources/etc/k0s/containerd/containerd.toml
+      dstDir: /etc/k0s/
+    - name: containerd registry config
+      src: ./resources/etc/k0s/containerd/containerd
+      dstDir: /etc/k0s/containerd
+  - ssh:
+      address: 193.151.145.230
+      user: root
+      port: 22
+    role: worker
+    uploadBinary: false
+    files:
+    - name: containerd config
+      src: ./resources/etc/k0s/containerd/containerd.toml
+      dstDir: /etc/k0s/
+    - name: containerd registry config
+      src: ./resources/etc/k0s/containerd/containerd
+      dstDir: /etc/k0s/containerd
+  - ssh:
+      address: 85.198.9.112
+      user: root
+      port: 22
+    role: worker
+    uploadBinary: false
+    files:
+    - name: containerd config
+      src: ./resources/etc/k0s/containerd/containerd.toml
+      dstDir: /etc/k0s/
+    - name: containerd registry config
+      src: ./resources/etc/k0s/containerd/containerd
+      dstDir: /etc/k0s/containerd
+  - ssh:
+      address: 85.198.9.113
+      user: root
+      port: 22
+    role: worker
+    uploadBinary: false
+    files:
+    - name: containerd config
+      src: ./resources/etc/k0s/containerd/containerd.toml
+      dstDir: /etc/k0s/
+    - name: containerd registry config
+      src: ./resources/etc/k0s/containerd/containerd
+      dstDir: /etc/k0s/containerd
+  # k0s:
+  #   config:
+  #     apiVersion: k0s.k0sproject.io/v1beta1
+  #     kind: Cluster
+  #     metadata:
+  #       name: k0s
+  #     spec:
+  #       api:
+  #         k0sApiPort: 9443
+  #         port: 6443
+  #       installConfig:
+  #         users:
+  #           etcdUser: etcd
+  #           kineUser: kube-apiserver
+  #           konnectivityUser: konnectivity-server
+  #           kubeAPIserverUser: kube-apiserver
+  #           kubeSchedulerUser: kube-scheduler
+  #       konnectivity:
+  #         adminPort: 8133
+  #         agentPort: 8132
+  #       network:
+  #         provider: calico
+  #         calico:
+  #           mode: "ipip"
+  #         kubeProxy:
+  #           disabled: false
+  #           mode: ipvs
+  #         kuberouter:
+  #           autoMTU: true
+  #           mtu: 0
+  #           peerRouterASNs: ""
+  #           peerRouterIPs: ""
+  #         podCIDR: 10.244.0.0/16
+  #         serviceCIDR: 10.96.0.0/12
+  #       podSecurityPolicy:
+  #         defaultPolicy: 00-k0s-privileged
+  #       storage:
+  #         type: etcd
+  #       telemetry:
+  #         enabled: true

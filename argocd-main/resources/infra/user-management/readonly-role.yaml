@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: kube-reader-cluster-role
+rules:
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["get", "watch", "list"]
+- apiGroups:
+    - pods
+  resources: ["*"]
+  verbs:
+    - get
+    - list
+    - watch
+    - delete
+    

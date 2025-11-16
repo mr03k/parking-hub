@@ -1,0 +1,1415 @@
+openapi: 3.0.3
+info:
+  title: ""
+  version: ""
+paths:
+  /api/idp/v1/roles:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoRoleListResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: List Roles
+      tags:
+      - Role
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DtoRoleRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoRoleResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Create Role
+      tags:
+      - Role
+  /api/idp/v1/roles/{role_id}:
+    delete:
+      parameters:
+      - in: path
+        name: role_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Delete Role
+      tags:
+      - Role
+    get:
+      parameters:
+      - in: path
+        name: role_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoRoleResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Get Role By ID
+      tags:
+      - Role
+  /api/idp/v1/users:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoUserListResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: List Users
+      tags:
+      - User
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DtoUserRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseApplicationInternalHttpDtoUserResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Create User
+      tags:
+      - User
+  /api/idp/v1/users/{user_id}:
+    delete:
+      parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema:
+          example: a0c3abdf-500c-4662-ac42-e78990f67431
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: OK
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Not Found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Delete User By ID
+      tags:
+      - User
+    get:
+      parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema:
+          example: a0c3abdf-500c-4662-ac42-e78990f67431
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoUserResponse'
+          description: OK
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Not Found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Get User By ID
+      tags:
+      - User
+  /api/idp/v1/users/{user_id}/roles:
+    get:
+      parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema:
+          example: a0c3abdf-500c-4662-ac42-e78990f67431
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoRoleListResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Get User Roles
+      tags:
+      - User
+  /api/idp/v1/users/{user_id}/roles/{role_id}:
+    delete:
+      parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema:
+          example: a0c3abdf-500c-4662-ac42-e78990f67431
+          type: string
+      - in: path
+        name: role_id
+        required: true
+        schema:
+          example: a0c3abdf-500c-4662-ac42-e78990f67431
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Delete User from Role
+      tags:
+      - User
+    post:
+      parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema:
+          example: a0c3abdf-500c-4662-ac42-e78990f67431
+          type: string
+      - in: path
+        name: role_id
+        required: true
+        schema:
+          example: a0c3abdf-500c-4662-ac42-e78990f67431
+          type: string
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Add User to Role
+      tags:
+      - User
+  /api/v1/cities:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoCityListResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: List City
+      tags:
+      - city
+  /api/v1/cities/{city_id}:
+    get:
+      parameters:
+      - in: path
+        name: city_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoCityResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Get City By ID
+      tags:
+      - city
+  /api/v1/contractor:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoConttactorListResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: List Vehicles
+      tags:
+      - Contractor
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DtoContractorRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoContractorResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Create Vehicle
+      tags:
+      - Contractor
+  /api/v1/contractor/{contractor_id}:
+    delete:
+      parameters:
+      - in: path
+        name: contractor_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Delete Vehicle
+      tags:
+      - Contractor
+    get:
+      parameters:
+      - in: path
+        name: contractor_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoVehicleResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Get Vehicle By ID
+      tags:
+      - Contractor
+  /api/v1/devices:
+    get:
+      description: Fetch a list of all license plate reader devices with basic information.
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoDeviceListResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: List Devices
+      tags:
+      - Device
+  /api/v1/devices/{id}:
+    get:
+      description: Fetch detailed information for a specific device by its unique
+        ID.
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoDeviceDetailResponse'
+          description: OK
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Not Found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Get Device Detail
+      tags:
+      - Device
+  /api/v1/districts:
+    get:
+      description: Fetch a list of all district records with basic information.
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoDistrictListResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: List Districts
+      tags:
+      - District
+  /api/v1/districts/detail:
+    get:
+      description: Fetch detailed information for a specific district by its unique
+        ID.
+      parameters:
+      - in: query
+        name: id
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoDistrictDetailResponse'
+          description: OK
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Not Found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Get District Detail
+      tags:
+      - District
+  /api/v1/drivers:
+    get:
+      description: Fetch a list of all drivers with their basic information.
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoDriverListResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: List Drivers
+      tags:
+      - Driver
+  /api/v1/drivers/{id}:
+    get:
+      description: Fetch detailed information for a specific driver by their unique
+        ID.
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoDriverDetailResponse'
+          description: OK
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Not Found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Get Driver By ID
+      tags:
+      - Driver
+  /api/v1/rings:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoRingListResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: List Rings
+      tags:
+      - Ring
+  /api/v1/rings/{id}:
+    get:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoRingResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Get Ring By ID
+      tags:
+      - Ring
+  /api/v1/vehicles:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoVehicleListResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: List Vehicles
+      tags:
+      - Vehicle
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DtoVehicleRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoVehicleResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Create Vehicle
+      tags:
+      - Vehicle
+  /api/v1/vehicles/{vehicle_id}:
+    delete:
+      parameters:
+      - in: path
+        name: vehicle_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Delete Vehicle
+      tags:
+      - Vehicle
+    get:
+      parameters:
+      - in: path
+        name: vehicle_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoVehicleResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Get Vehicle By ID
+      tags:
+      - Vehicle
+  /api/v1/vehicles/{vehicle_id}/login:
+    post:
+      parameters:
+      - in: path
+        name: vehicle_id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OapiVehicalLogin'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoDriverLoginResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Login
+      tags:
+      - Chapar
+  /api/v1/work-calendars:
+    get:
+      description: Fetch a list of all work calendar records with basic information.
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoWorkCalendarListResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: List Work Calendars
+      tags:
+      - WorkCalendar
+  /api/v1/work-calendars/{id}:
+    get:
+      description: Fetch detailed information for a specific work calendar by its
+        unique ID.
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DtoWorkCalendarDetailResponse'
+          description: OK
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Not Found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Get Work Calendar Detail
+      tags:
+      - WorkCalendar
+  /healthz/liveness:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Healthz Liveness
+      tags:
+      - Healthz(Internal)
+  /healthz/readiness:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseResponseString'
+          description: Internal Server Error
+      summary: Healthz Readiness
+      tags:
+      - Healthz(Internal)
+components:
+  schemas:
+    DeviceContractor:
+      properties:
+        address:
+          type: string
+        ceo_name:
+          type: string
+        code_contractor:
+          type: string
+        contractor_name:
+          type: string
+        description:
+          type: string
+        email:
+          type: string
+        id:
+          $ref: '#/components/schemas/UuidUUID'
+        number_account_bank:
+          type: string
+        number_registration:
+          type: string
+        person_contact:
+          type: string
+        phone_number:
+          type: string
+        signatories_authorized:
+          type: string
+        type_contract:
+          type: string
+      type: object
+    DtoCityListResponse:
+      properties:
+        cities:
+          items:
+            $ref: '#/components/schemas/DtoCityResponse'
+          nullable: true
+          type: array
+        count:
+          type: integer
+      type: object
+    DtoCityResponse:
+      properties:
+        city_code:
+          type: string
+        city_id:
+          type: string
+        city_name:
+          type: string
+        contry_id:
+          type: string
+        geo_boundaries:
+          type: string
+      type: object
+    DtoContractorRequest:
+      properties:
+        address:
+          type: string
+        autorization_signatories:
+          type: string
+        bank_account_number:
+          type: string
+        ceo_name:
+          type: string
+        contact_person:
+          type: string
+        contract_type:
+          type: string
+        contractor_code:
+          type: string
+        contractor_name:
+          type: string
+        description:
+          type: string
+        email:
+          type: string
+        phone_numbers:
+          type: string
+        register_number:
+          type: string
+      type: object
+    DtoContractorResponse:
+      properties:
+        address:
+          type: string
+        autorization_signatories:
+          type: string
+        bank_account_number:
+          type: string
+        ceo_name:
+          type: string
+        contact_person:
+          type: string
+        contract_type:
+          type: string
+        contractor_code:
+          type: string
+        contractor_name:
+          type: string
+        description:
+          type: string
+        email:
+          type: string
+        id:
+          type: string
+        phone_numbers:
+          type: string
+        register_number:
+          type: string
+      type: object
+    DtoConttactorListResponse:
+      properties:
+        contractors:
+          items:
+            $ref: '#/components/schemas/DeviceContractor'
+          nullable: true
+          type: array
+        count:
+          type: integer
+      type: object
+    DtoDeviceDetailResponse:
+      properties:
+        classDevice:
+          type: string
+        codeDevice:
+          type: string
+        dateExpiryInsurance:
+          format: date-time
+          type: string
+        dateExpiryWarranty:
+          format: date-time
+          type: string
+        dateInstallation:
+          format: date-time
+          type: string
+        description:
+          type: string
+        id:
+          type: string
+        imageContractUrl:
+          type: string
+        imageInsuranceUrl:
+          type: string
+        model:
+          type: string
+        numberSerial:
+          type: string
+      type: object
+    DtoDeviceListResponse:
+      properties:
+        devices:
+          items:
+            $ref: '#/components/schemas/DtoDeviceResponse'
+          nullable: true
+          type: array
+      type: object
+    DtoDeviceResponse:
+      properties:
+        classDevice:
+          type: string
+        codeDevice:
+          type: string
+        dateExpiryInsurance:
+          format: date-time
+          type: string
+        dateExpiryWarranty:
+          format: date-time
+          type: string
+        dateInstallation:
+          format: date-time
+          type: string
+        id:
+          type: string
+        model:
+          type: string
+        numberSerial:
+          type: string
+        status:
+          type: string
+      type: object
+    DtoDistrictDetailResponse:
+      properties:
+        area:
+          type: number
+        cityId:
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        districtCode:
+          type: string
+        districtName:
+          type: string
+        geoBoundary:
+          type: string
+        id:
+          type: string
+        population:
+          type: integer
+      type: object
+    DtoDistrictListResponse:
+      properties:
+        districts:
+          items:
+            $ref: '#/components/schemas/DtoDistrictResponse'
+          nullable: true
+          type: array
+      type: object
+    DtoDistrictResponse:
+      properties:
+        area:
+          type: number
+        cityId:
+          type: string
+        districtCode:
+          type: string
+        districtName:
+          type: string
+        geoBoundary:
+          type: string
+        id:
+          type: string
+        population:
+          type: integer
+      type: object
+    DtoDriverDetailResponse:
+      properties:
+        address:
+          type: string
+        birthCertificateImageUrl:
+          type: string
+        criminalRecordImageUrl:
+          type: string
+        description:
+          type: string
+        driverPhotoUrl:
+          type: string
+        driverType:
+          type: string
+        employmentEndDate:
+          format: date-time
+          nullable: true
+          type: string
+        employmentStartDate:
+          format: date-time
+          nullable: true
+          type: string
+        employmentStatus:
+          type: string
+        healthCertificateImageUrl:
+          type: string
+        id:
+          type: string
+        idCardImageUrl:
+          type: string
+        militaryServiceCardImageUrl:
+          type: string
+        shiftType:
+          type: string
+      type: object
+    DtoDriverListResponse:
+      properties:
+        drivers:
+          items:
+            $ref: '#/components/schemas/DtoDriverResponse'
+          nullable: true
+          type: array
+      type: object
+    DtoDriverLoginResponse:
+      properties:
+        token:
+          type: string
+        user_id:
+          type: string
+      type: object
+    DtoDriverResponse:
+      properties:
+        address:
+          type: string
+        driverType:
+          type: string
+        employmentStatus:
+          type: string
+        id:
+          type: string
+        shiftType:
+          type: string
+      type: object
+    DtoRingListResponse:
+      properties:
+        rings:
+          items:
+            $ref: '#/components/schemas/DtoRingResponse'
+          nullable: true
+          type: array
+      type: object
+    DtoRingResponse:
+      properties:
+        id:
+          type: string
+        ring_code:
+          type: string
+        ring_name:
+          type: string
+      type: object
+    DtoRoleListResponse:
+      properties:
+        count:
+          type: integer
+        roles:
+          items:
+            $ref: '#/components/schemas/DtoRoleResponse'
+          nullable: true
+          type: array
+      type: object
+    DtoRoleRequest:
+      properties:
+        description:
+          type: string
+        name:
+          type: string
+      type: object
+    DtoRoleResponse:
+      properties:
+        description:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+      type: object
+    DtoUserListResponse:
+      properties:
+        total:
+          type: integer
+        users:
+          items:
+            $ref: '#/components/schemas/DtoUserResponse'
+          nullable: true
+          type: array
+      type: object
+    DtoUserRequest:
+      properties:
+        address:
+          type: string
+        authorizedSignatories:
+          type: string
+        bankAccountNumber:
+          type: string
+        ceoName:
+          type: string
+        contactPerson:
+          type: string
+        contractType:
+          type: string
+        contractorCode:
+          type: string
+        contractorName:
+          type: string
+        description:
+          type: string
+        email:
+          type: string
+        msisdn:
+          type: string
+        msisdnVerified:
+          default: true
+          type: boolean
+        password:
+          type: string
+        phoneNumber:
+          type: string
+        registrationNumber:
+          type: string
+      type: object
+    DtoUserResponse:
+      properties:
+        address:
+          type: string
+        authorizedSignatories:
+          type: string
+        bankAccountNumber:
+          type: string
+        ceoName:
+          type: string
+        contactPerson:
+          type: string
+        contractType:
+          type: string
+        contractorCode:
+          type: string
+        contractorName:
+          type: string
+        description:
+          type: string
+        email:
+          type: string
+        msisdn:
+          type: string
+        msisdnVerified:
+          default: true
+          type: boolean
+        phoneNumber:
+          type: string
+        registrationNumber:
+          type: string
+        userId:
+          type: string
+      type: object
+    DtoVehicleListResponse:
+      properties:
+        count:
+          type: integer
+        vehicles:
+          items:
+            $ref: '#/components/schemas/DtoVehicleResponse'
+          nullable: true
+          type: array
+      type: object
+    DtoVehicleRequest:
+      properties:
+        brand:
+          type: string
+        code_vehicle:
+          type: string
+        color:
+          type: string
+        contractor_id:
+          type: integer
+        description:
+          type: string
+        expiry_insurance_body:
+          type: integer
+        expiry_insurance_party_third:
+          type: integer
+        kilometers_initial:
+          type: integer
+        manufacture_of_year:
+          type: integer
+        model:
+          type: string
+        plate_license:
+          type: string
+        status:
+          type: string
+        type_vehicle:
+          type: string
+        vin:
+          type: string
+      type: object
+    DtoVehicleResponse:
+      properties:
+        brand:
+          type: string
+        code_vehicle:
+          type: string
+        color:
+          type: string
+        contractor_id:
+          type: integer
+        description:
+          type: string
+        expiry_insurance_body:
+          type: integer
+        expiry_insurance_party_third:
+          type: integer
+        id:
+          type: integer
+        kilometers_initial:
+          type: integer
+        manufacture_of_year:
+          type: integer
+        model:
+          type: string
+        plate_license:
+          type: string
+        status:
+          type: string
+        type_vehicle:
+          type: string
+        vin:
+          type: string
+      type: object
+    DtoWorkCalendarDetailResponse:
+      properties:
+        contractId:
+          type: string
+        description:
+          type: string
+        id:
+          type: string
+        isHoliday:
+          type: boolean
+        shamsiDate:
+          type: string
+        weekday:
+          type: string
+        workDate:
+          format: date-time
+          type: string
+        workShift:
+          type: string
+        workShiftEnd:
+          format: date-time
+          type: string
+        workShiftStart:
+          format: date-time
+          type: string
+        year:
+          type: integer
+      type: object
+    DtoWorkCalendarListResponse:
+      properties:
+        workCalendars:
+          items:
+            $ref: '#/components/schemas/DtoWorkCalendarResponse'
+          nullable: true
+          type: array
+      type: object
+    DtoWorkCalendarResponse:
+      properties:
+        description:
+          type: string
+        id:
+          type: string
+        isHoliday:
+          type: boolean
+        shamsiDate:
+          type: string
+        weekday:
+          type: string
+        workDate:
+          format: date-time
+          type: string
+        workShift:
+          type: string
+        year:
+          type: integer
+      type: object
+    OapiVehicalLogin:
+      properties:
+        msisdn:
+          type: string
+        password:
+          type: string
+      type: object
+    ResponseResponseApplicationInternalHttpDtoUserResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/DtoUserResponse'
+        message:
+          type: string
+        status:
+          type: integer
+      type: object
+    ResponseResponseString:
+      properties:
+        data:
+          type: string
+        message:
+          type: string
+        status:
+          type: integer
+      type: object
+    UuidUUID:
+      example: 248df4b7-aa70-47b8-a036-33ac447e668d
+      format: uuid
+      type: string

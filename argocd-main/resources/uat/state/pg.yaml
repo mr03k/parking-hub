@@ -1,0 +1,52 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: pg-state
+  namespace: uat
+spec:
+  backup:
+    barmanObjectStore:
+      destinationPath: s3://db-backups
+      endpointURL: https://z10.s3.cloud.ir
+      s3Credentials:
+        accessKeyId:
+          key: S3_ACCESS_KEY
+          name: s3-backup-secret
+        secretAccessKey:
+          key: S3_SECRET_KEY
+          name: s3-backup-secret
+    retentionPolicy: "10d"
+  instances: 1
+  imageName: ghcr.io/cloudnative-pg/postgis:16-3.5-114@sha256:e332282b03d44e96704de8c6f472728f8c6ae0c235a414da3669d13783fe0f1d
+  storage:
+    size: 40Gi
+  managed:
+    services:
+      additional:
+      - selectorType: rw
+        updateStrategy: replace
+        serviceTemplate:
+          metadata:
+            name: "pg-state-nodeport"
+          spec:
+            type: NodePort
+    roles:
+    - name: aban
+      ensure: present
+      comment: aban
+      login: true
+      superuser: true
+      inRoles:
+      - pg_monitor
+      - pg_signal_backend
+  bootstrap:
+    initdb:
+      database: states # Name of the initial database
+      owner: aban # Owner of the database
+      secret:
+        name: postgres-state-user-secret # Secret containing password
+      # postInitSQL:
+      # - GRANT CONNECT ON DATABASE states TO bi_user;
+      # - GRANT USAGE ON SCHEMA public TO bi_user;
+      # - GRANT SELECT ON ALL TABLES IN SCHEMA public TO bi_user;
+      # - ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO bi_user;

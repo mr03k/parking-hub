@@ -1,0 +1,42 @@
+
+
+stages:
+  - build
+  - test
+  - check_deploy
+  - deploy
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+  HELM_NAME: $CI_PROJECT_NAME
+  IMAGE_NAME: $CI_REGISTRY/farin/$CI_PROJECT_NAME:$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHA
+  MIGRATE_IMAGE_NAME: $CI_REGISTRY/farin/migrate/$CI_PROJECT_NAME:$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHA
+
+
+
+build-docker:
+  image: docker:19.03.11
+  stage: build
+  
+  before_script:
+    - env
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWD $CI_REGISTRY
+  script:
+    - echo "Building the Docker image... $IMAGE_NAME"
+    - docker build . --build-arg GIT_DEPLOY_TOKEN_USER=$GIT_DEPLOY_TOKEN_USER --build-arg GIT_DEPLOY_TOKEN_PASSWORD=$GIT_DEPLOY_TOKEN_PASSWORD -t $IMAGE_NAME
+    - docker push $IMAGE_NAME
+
+
+
+build-docker-migrate:
+  image: docker:19.03.11
+  stage: build
+
+  before_script:
+    - env
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWD $CI_REGISTRY
+  script:
+    - echo "Building the Docker image... $MIGRATE_IMAGE_NAME"
+    - docker build -t $MIGRATE_IMAGE_NAME  -f ./migrate.Dockerfile .
+    - docker push $MIGRATE_IMAGE_NAME

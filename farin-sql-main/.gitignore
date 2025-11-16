@@ -1,0 +1,39 @@
+# Go build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Go module cache
+**/pkg/mod/
+
+# Go binary directory
+**/bin/
+
+# IDE and editor specific files
+*.vscode/
+*.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Go specific IDE files
+*.go.sum
+
+# Log files
+*.log
+
+# Dependency directories
+vendor/
+
+# Coverage reports
+*.out
+coverage.out
+
+# GoLand
+.idea/
+*.iml
+
+# Build output
+build/

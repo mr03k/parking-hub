@@ -1,0 +1,4 @@
+server = "https://docker.io"
+
+[host."https://nexus-docker.aban.io"]
+  capabilities = ["pull", "resolve"]

@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: farin-backend
+  namespace: uat
+data:
+  env: |
+    ENVIRONMENT=production
+    BASE_URL=http://localhost:80
+    DATABASE_HOST=postgresql://aban:AbanXXFarinBackendNXX444@pg-backend-rw:5432/farin
+    HTTP_PORT=80
+    SECRET=secret123
+
+    RABBITMQ_HOST=amqps://default_user_bkVtZ-pUWMLqTFliGYJ:ae0FWgOoLiEmBZBW5MGQa2lMBauLKQpX@amqp.gw.k8s.sh.aban.io:5672
+    RABBITMQ_EVENT_EXCHANGE=farin_geodata
+    RABBITMQ_INTERNAL_EXCHANGE=atoor_data
+    RABBITMQ_GEODATA_QUEUE=farin_geodata
+
+
+    MINIO_HOST=z10.s3.cloud.ir
+    MINIO_ACCESS_TOKEN=72daccda5c064281b1aea5ec6417270a
+    MINIO_SECRET=428b493d2409421bbdb8b09f999caa25
+    MINIO_PROFILE_PICTURE_BUCKET=user-images
+    MINIO_DOCTOR_BUCKET=doctor
+
+    OPEN_TELEMETRY_METRIC_EXPORTER=opentelemtry-collector-collector.uat:4317
+    OPEN_TELEMETRY_LOG_EXPORTER=opentelemtry-collector-collector.uat:4317
