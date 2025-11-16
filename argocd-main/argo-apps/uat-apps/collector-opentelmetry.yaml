@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://git.abanppc.com/farin-project/infra/argocd.git
+    repoURL: https://github.com/mr03k/parking-hub.git
     targetRevision: HEAD
-    path: resources/uat/uptrace-collector
+    path: argocd-main/resources/uat/uptrace-collector
   destination:
     server: https://kubernetes.default.svc
     namespace: uat

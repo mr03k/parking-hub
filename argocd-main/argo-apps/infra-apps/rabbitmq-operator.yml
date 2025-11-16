@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://nexus.aban.io/repository/bitnami
+    repoURL: https://charts.bitnami.com/bitnami
     chart: rabbitmq-cluster-operator
     targetRevision: 4.3.18
   destination:

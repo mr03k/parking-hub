@@ -30,9 +30,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://git.abanppc.com/farin-project/infra/argocd.git
+    repoURL: https://github.com/mr03k/parking-hub.git
     targetRevision: HEAD
-    path: resources/infra/gateway-api
+    path: argocd-main/resources/infra/gateway-api
   destination:
     server: https://kubernetes.default.svc
     namespace: gateway-resources

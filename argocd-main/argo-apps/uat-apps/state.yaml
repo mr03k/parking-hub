@@ -8,9 +8,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://git.abanppc.com/farin-project/infra/argocd.git
+    repoURL: https://github.com/mr03k/parking-hub.git
     targetRevision: HEAD
-    path: resources/uat/state
+    path: argocd-main/resources/uat/state
   destination:
     server: https://kubernetes.default.svc
     namespace: uat
