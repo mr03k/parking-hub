@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: farin-vehicle-record
-        image: docker.aban.io/farin/vehicle-records:main-e1defe73e7b29feae86fe2fc45f22b11275faef3
+        image: kohandani/farin-vehicle-record:local
         resources:
           requests:
             memory: "200Mi"
@@ -46,14 +46,14 @@ spec:
 
       initContainers:
       - name: migrate
-        image: docker.aban.io/farin/migrate/vehicle-records:main-aead149efabdad0db355b96bcade58d8bcf92cd9
+        image: kohandani/farin-vehicle-record-migrate:local
         command: [ "/bin/sh", "-c", "/usr/bin/migrate -path /app/migrations -database \"$(cat /app/.env | grep '^DATABASE_HOST=' | awk -F'=' '{print substr($0, index($0, $2))}')\" -verbose up" ]
         volumeMounts:
         - name: config-env
           subPath: env
           mountPath: /app/.env
       - name: init-seed
-        image: docker.aban.io/farin/vehicle-records:main-4e148e0c2f1957342e4004fb017c48f345681116
+        image: kohandani/farin-vehicle-record:local
         command: [ "/app/build", "-seed" ]
         volumeMounts:
         - name: config-env
