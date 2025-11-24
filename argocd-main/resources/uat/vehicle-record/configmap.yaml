@@ -6,7 +6,7 @@ metadata:
 data:
   env: |
     ENVIRONMENT=production
-    DATABASE_HOST=postgresql://aban:AbanXXVehicleRecord33ZZ12X@pg-vehicle-record-second-rw:5432/vehicle_records?sslmode=disable
+    DATABASE_HOST=postgresql://aban:AbanXXVehicleRecord33ZZ12X@pg-vehicle-record-rw:5432/vehicle_records?sslmode=disable
     HTTP_PORT=80
     SECRET=secret123
 
