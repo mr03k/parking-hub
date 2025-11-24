@@ -53,13 +53,13 @@ spec:
       passwordSecret:
         name: postgres-bi-user-secret
   bootstrap:
-    initdb:
-      database: vehicle_records # Name of the initial database
-      owner: aban # Owner of the database
-      secret:
-        name: postgres-user-secret # Secret containing password
-      postInitSQL:
-      - GRANT CONNECT ON DATABASE vehicle_records TO bi_user;
-      - GRANT USAGE ON SCHEMA public TO bi_user;
-      - GRANT SELECT ON ALL TABLES IN SCHEMA public TO bi_user;
-      - ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO bi_user;
+   initdb:
+     database: vehicle_records # Name of the initial database
+     owner: aban               # Owner of the database
+     secret:
+       name: postgres-user-secret # Secret containing password
+     postInitApplicationSQL:
+     - GRANT CONNECT ON DATABASE vehicle_records TO bi_user;
+     - GRANT USAGE ON SCHEMA public TO bi_user;
+     - GRANT SELECT ON ALL TABLES IN SCHEMA public TO bi_user;
+     - ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO bi_user;
